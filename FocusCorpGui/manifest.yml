@@ -1,0 +1,4 @@
+applications:
+- name: FocusCorpGui
+  memory: 256M
+  services:
