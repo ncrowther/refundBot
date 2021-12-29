@@ -1,43 +1,22 @@
 
-	’W”y›³B’)…"¶%^¨—[defVar --name processPath --type String
-defVar --name processPathParamName --type String
-defVar --name fileSystem --type FileSystem
-defVar --name files --type List --innertype String
+	’W”y›³B’)…"¶%^¨‘SdefVar --name processPath --type String
 defVar --name processFileName --type String --value "D:\\RPA\\github\\refundBot\\data\\refunds.xlsx"
 defVar --name fileDataTable --type DataTable
 defVar --name fileRowCount --type Numeric
-defVar --name fileNameWithExt --type String
-defVar --name filesCount --type Numeric
-defVar --name processingDir --type String --value processing
-defVar --name isDirExist --type Boolean
-defVar --name processDirs --type List --innertype String --value "[processing,complete,fail]"
 defVar --name tableIndex --type Numeric --value 1
-defVar --name routineName --type String
 defVar --name ticket_number --type String
-defVar --name DEFAULT_TIMEOUT --type TimeSpan --value "00:00:50"
-defVar --name timeoutOk --type Boolean
-defVar --name moveFileOnError --type Boolean --value False
-defVar --name fileInProcessingDir --type Boolean
 defVar --name excelFile --type Excel
 defVar --name rpa_status --type String
 defVar --name payment_type --type String
-defVar --name result --type String
 defVar --name payment_value --type String
 defVar --name success --type Boolean
 defVar --name error_code --type String
 defVar --name error_desc --type String
-defVar --name instId --type String --parameter 
 defVar --name retVal --type Boolean
-defVar --name overallTime --type DateTime
 defVar --name stopwatch --type Stopwatch
 defVar --name totalHours --type Numeric
 defVar --name totalMinutes --type Numeric
 defVar --name totalSeconds --type Numeric
-defVar --name successItemCount --type Numeric --value 0
-defVar --name failItemCount --type Numeric --value 0
-defVar --name emailRecipientsParam --type String
-defVar --name emailRecipientsString --type String
-defVar --name totalTickets --type Numeric --value 0
 defVar --name result_code --type String
 defVar --name result_desc --type String
 defVar --name totalRunTime --type TimeSpan
@@ -45,7 +24,6 @@ defVar --name timing_minutes --type Numeric
 defVar --name timing_seconds --type Numeric
 defVar --name timing_milliseconds --type Numeric
 defVar --name attachments --type List --innertype String
-defVar --name isBrowserOpen --type Boolean --value False
 defVar --name refundCount --type Numeric --value 0
 defVar --name noRefundCount --type Numeric --value 0
 defVar --name processedCount --type Numeric --value 0
@@ -104,10 +82,6 @@ else
 	convertStringToNumber --text "${rowPassCountStr}" rowPassCount=value
 endIf
 
-if --left "${rpaStatusCode}" --operator "Is_Null"
-	setVar --name "${rpaStatusCode}" --value "-1"
-endIf
-
 // VALIDATE
 trimString --text "${ticket_number}" --trimoption "TrimStartAndEnd" ticket_number=value
 trimString --text "${payment_type}" --trimoption "TrimStartAndEnd" payment_type=value
@@ -117,38 +91,21 @@ logMessage --message "\r\nTicket Number - ${ticket_number}\r\nStatus - ${rpa_sta
 endSub
 
 beginSub --name processItem
-// call the page routine for TravelCat
 evaluate --expression "${processedCount} + 1" --comment "Row Count for Report" processedCount=value
 goSub --label getExcelValues --comment "Get excel values"
-if --left "${rpaStatusCode}" --operator "Equal_To" --right 00 --negate  --comment "Don\'t reprocess  status code 00 - Success"
-	
-	if --left "${rpaStatusCode}" --operator "Equal_To" --right 01 --comment "Don\'t reprocess status code 02 - invalid ticket number"
+
+if --left "${rpaStatusCode}" --operator "Is_Null_Or_Empty" --negate  --comment "Row has already been processed"
+	if --left "${rpaStatusCode}" --operator "Less_Than" --right 98 --comment "Don\'t reprocess error codes less than 98"
 		return
 	endIf
-	
-	if --left "${rpaStatusCode}" --operator "Equal_To" --right 02 --comment "Don\'t reprocess status code 02 - invalid payment type"
-		return
-	endIf
-	
-	if --left "${rpaStatusCode}" --operator "Equal_To" --right 03 --comment "Don\'t reprocess status code 03 - invalid amount"
-		return
-	endIf
-	
-	if --left "${rowPassCount}" --operator "Greater_Than_Equal_To" --right "${retryCount}" --comment "Dont reprocess rows that have already been processed several times"
-		return
-	endIf
-	
-	executeScript --isfromfile  --filename "D:\\RPA\\github\\refundBot\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
-	
-	if --left "${result_code}" --operator "Equal_To" --right 00
-		updateCounter --project Refunds --counter refundSuccessCount --value 1
-		evaluate --expression "${refundCount} + 1" refundCount=value
-	else
-		updateCounter --project Refunds --counter refundFailCount --value 1
-		evaluate --expression "${noRefundCount} + 1" noRefundCount=value
-	endIf
-	goSub --label updateExcel
 endIf
+
+executeScript --isfromfile  --filename "D:\\RPA\\github\\refundBot\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+
+goSub --label UpdateCounters
+
+goSub --label updateExcel
+
 endSub
 
 beginSub --name recordStats
@@ -175,12 +132,11 @@ for --variable ${tableIndex} --from 2 --to ${fileRowCount} --step 1
 next
 stopTimer --stopwatch ${stopwatch} totalRunTime=time totalHours=hours totalMinutes=minutes totalSeconds=seconds
 goSub --label recordStats --comment "Record Stats"
-goSub --label successEmail --comment "Send success email"
-// fileRename --file "${processFileName}" --newname "${processFileName}Processed"
+goSub --label sendSuccessEmail --comment "Send success email"
 logMessage --message "${stats}" --type "Info"
 endSub
 
-beginSub --name successEmail
+beginSub --name sendSuccessEmail
 logMessage --message "Create Email Body" --type "Info"
 getTimePart --time ${totalRunTime} --type "Minutes" timing_minutes=value
 getTimePart --time ${totalRunTime} --type "Seconds" timing_seconds=value
@@ -202,6 +158,28 @@ logMessage --message "${errorMessage}" --type "Error"
 // TODO: Send Email
 endSub
 
+beginSub --name UpdateCounters
+if --left "${result_code}" --operator "Equal_To" --right 00 --comment "00 - Success"
+	updateCounter --project Refunds --counter Success --value 1
+	evaluate --expression "${refundCount} + 1" refundCount=value
+	return
+endIf
+
+evaluate --expression "${noRefundCount} + 1" noRefundCount=value
+
+if --left "${result_code}" --operator "Equal_To" --right 01 --comment "01 - invalid ticket number"
+	updateCounter --project Refunds --counter InvalidTicket --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 02 --comment "02 - invalid payment type"
+	updateCounter --project Refunds --counter InvalidPaymentType --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 03 --comment "03 - invalid amount"
+	updateCounter --project Refunds --counter InvalidAmount --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 98 --comment "98 - Backend Error"
+	updateCounter --project Refunds --counter BackendError --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 99 --comment "99 - Bor Error"
+	updateCounter --project Refunds --counter BotError --value 1
+endIf
+endSub
+
 beginSub --name getErrorMessage
 getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
 setVar --name "${errorMessage}" --value "An error occurred in RPA Robot.\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${wdg:errorMessage}\r\nSubroutine: ${wdg:errorSubName}\r\nLine Number: ${wdg:lineNumber}"
@@ -210,5 +188,4 @@ endSub
 beginSub --name Main_ErrorHandler
 goSub --label getErrorMessage
 goSub --label sendErrorEmail
-
 endSub"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.1.0

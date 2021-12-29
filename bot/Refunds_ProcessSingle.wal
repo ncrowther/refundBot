@@ -1,10 +1,10 @@
 
-	w{BaFÜ Á2∏—cê'defVar --name in_param_ticket --type String --value M3A83727 --parameter
-defVar --name in_param_repaymentAmt --type String --value "49.7" --parameter
-defVar --name in_param_paymentType --type String --value Card --parameter
-defVar --name out_success --type Boolean --value True --output
-defVar --name out_code --type String --value 99 --output
-defVar --name out_desc --type String --value FAILED --output
+	w{BaFÜ Á2∏—c¥%defVar --name in_param_ticket --type String --value M3A83727 --parameter 
+defVar --name in_param_repaymentAmt --type String --value "49.7" --parameter 
+defVar --name in_param_paymentType --type String --value Card --parameter 
+defVar --name out_success --type Boolean --value True --output 
+defVar --name out_code --type String --value 99 --output 
+defVar --name out_desc --type String --value FAILED --output 
 defVar --name browserId --type Browser
 defVar --name focusCorpUrl --type String --value "https://focuscorpgui.eu-gb.mybluemix.net"
 defVar --name ticketStatusBanner --type String
@@ -27,107 +27,108 @@ defVar --name waitForElementStatus --type Boolean
 defVar --name retVal --type Boolean
 defVar --name DEFAULT_TIMEOUT --type TimeSpan --value "00:00:05"
 
+onError --executenext 
 
-onError --executenext
-
-// Use for calling from another script
 goSub --label ProcessSingleRefund
 
 beginSub --name ProcessSingleRefund
-	
-	webStart --name browser --type "Chrome" browserId=value
-	
-	webNavigate --url "${focusCorpUrl}" --comment "Navigate to Refund web site"
-	
+webStart --name browser --type "Chrome" browserId=value
+
+webNavigate --url "${focusCorpUrl}" --comment "Navigate to Refund web site"
+
 // Search for the ticket
-	
-	goSub --label findTicket
-	
-	if --left "${browserId}" --operator "Is_Null" --negate
-		webClose --name browser
-	endIf
+goSub --label findTicket
+
+if --left "${browserId}" --operator "Is_Null" --negate 
+	webClose --name browser
+endIf
 endSub
 
 beginSub --name findTicket
-	
-	logMessage --message "Finding ticket ${in_param_ticket}" --type "Info"
-	setVar --name "${out_success}" --value true
-	
+
+// Find the ticket to refund
+logMessage --message "Finding ticket ${in_param_ticket}" --type "Info"
+setVar --name "${out_success}" --value true
+
 // Set ticket number
-	setVar --name "${controlId}" --value ticketNumber
-	goSub --label waitWebClickId
-	webSet --value "${in_param_ticket}" --selector "Id" --id "${controlId}" --simulatehuman
-	
+goSub --label setTicketNumber
+
 // Set payment type
-	setVar --name "${controlId}" --value paymentType
-	goSub --label waitWebClickId
-	webSet --value "${in_param_paymentType}" --selector "Id" --id "${controlId}" --simulatehuman
-	
+goSub --label setPaymentType
+
 // Set refund amount
-	setVar --name "${controlId}" --value amount
-	goSub --label waitWebClickId
-	webSet --value "${in_param_repaymentAmt}" --selector "Id" --id "${controlId}" --simulatehuman
-	
+goSub --label setRefundAmount
+
 // Set refund reason
-	setVar --name "${controlId}" --value reason
-	goSub --label waitWebClickId
-	webSet --value Covid --selector "Id" --id "${controlId}" --simulatehuman
-	
+goSub --label setRefundReason
+
 // Click Refund button
-	setVar --name "${controlId}" --value submit
-	goSub --label waitWebClickId
-	
-	delay --timeout "00:00:01"
-	
-	
+goSub --label clickRefundButton
+
 // Get refund code and  message from ticket status banner
-	webGet --selector "XPath" --xpath "//*[@id=\"result\"]" --timeout "00:00:05" ticketStatusBanner=value
-	
-	if --left "${ticketStatusBanner}" --operator "Is_Empty"
-		setVar --name "${out_success}" --value false
-		setVar --name "${out_code}" --value 99
-		setVar --name "${out_desc}" --value "Failed to process"
-		return
-	endIf
-	
-	getSubString --text "${ticketStatusBanner}" --start ${refundCodeStart} --length ${refundCodeLen} refundCode=value
-	getSubString --text "${ticketStatusBanner}" --start ${refundMessageStart} refundMessage=value
-	
-	if --left "${refundCode}" --operator "Equal_To" --right 00
-		setVar --name "${out_success}" --value true
-	else
-		setVar --name "${out_success}" --value false
-	endIf
-	
-	setVar --name "${out_code}" --value "${refundCode}"
-	setVar --name "${out_desc}" --value "${refundMessage}"
-	
+goSub --label GetRefundResultCode
+
 endSub
 
 
 beginSub --name waitWebClickId
-	webWaitElement --selector "Id" --id "${controlId}" --timeout "${DEFAULT_TIMEOUT}" waitForElementStatus=value
-	if --left "${waitForElementStatus}" --operator "Is_True" --negate
-		setVar --name "${out_success}" --value false
-		setVar --name "${out_code}" --value 99
-		setVar --name "${out_desc}" --value "Timeout error"
-		
-		logMessage --message "Failed to find element id ${controlId}" --type "Info"
-		return
-	endIf
-	webClick --selector "Id" --id "${controlId}" --simulatehuman
+webWaitElement --selector "Id" --id "${controlId}" --timeout "${DEFAULT_TIMEOUT}" waitForElementStatus=value
+if --left "${waitForElementStatus}" --operator "Is_True" --negate 
+	setVar --name "${out_success}" --value false
+	setVar --name "${out_code}" --value 99
+	setVar --name "${out_desc}" --value "Timeout error"
+	
+	logMessage --message "Failed to find element id ${controlId}" --type "Info"
+	return
+endIf
+webClick --selector "Id" --id "${controlId}" --simulatehuman 
 endSub
 
-beginSub --name waitWebClickXPath
-	webWaitElement --selector "XPath" --xpath "${xpath}" --timeout "${DEFAULT_TIMEOUT}" waitForElementStatus=value
-	if --left "${waitForElementStatus}" --operator "Is_True" --negate
-		setVar --name "${out_success}" --value false
-		setVar --name "${out_code}" --value 99
-		setVar --name "${out_desc}" --value "Timeout error"
-		logMessage --message "Failed to find xpath ${xpath}" --type "Info"
-		failTest --message "Fatal error processing ${in_param_ticket}"
-		return
-	endIf
-	webClick --selector "XPath" --xpath "${xpath}" --simulatehuman
+beginSub --name GetRefundResultCode
+webGet --selector "XPath" --xpath "//*[@id=\"result\"]" --timeout "00:00:05" ticketStatusBanner=value
+
+if --left "${ticketStatusBanner}" --operator "Is_Empty"
+	setVar --name "${out_success}" --value false
+	setVar --name "${out_code}" --value 99
+	setVar --name "${out_desc}" --value "Failed to process"
+	return
+endIf
+
+getSubString --text "${ticketStatusBanner}" --start ${refundCodeStart} --length ${refundCodeLen} refundCode=value
+getSubString --text "${ticketStatusBanner}" --start ${refundMessageStart} refundMessage=value
+
+if --left "${refundCode}" --operator "Equal_To" --right 00
+	setVar --name "${out_success}" --value true
+else
+	setVar --name "${out_success}" --value false
+endIf
+
+setVar --name "${out_code}" --value "${refundCode}"
+setVar --name "${out_desc}" --value "${refundMessage}"
 endSub
-"	#w3V´jHïTbÛJ¸Âe*21.0.1.0
+
+beginSub --name setTicketNumber
+setVar --name "${controlId}" --value ticketNumber
+goSub --label waitWebClickId
+webSet --value "${in_param_ticket}" --selector "Id" --id "${controlId}" --simulatehuman 
+endSub
+beginSub --name setPaymentType
+setVar --name "${controlId}" --value paymentType
+goSub --label waitWebClickId
+webSet --value "${in_param_paymentType}" --selector "Id" --id "${controlId}" --simulatehuman 
+endSub
+beginSub --name setRefundAmount
+setVar --name "${controlId}" --value amount
+goSub --label waitWebClickId
+webSet --value "${in_param_repaymentAmt}" --selector "Id" --id "${controlId}" --simulatehuman 
+endSub
+beginSub --name setRefundReason
+setVar --name "${controlId}" --value reason
+goSub --label waitWebClickId
+webSet --value Covid --selector "Id" --id "${controlId}" --simulatehuman 
+endSub
+beginSub --name clickRefundButton
+setVar --name "${controlId}" --value submit
+goSub --label waitWebClickId
+delay --timeout "00:00:01"
+endSub"	#w3V´jHïTbÛJ¸Âe*21.0.1.0

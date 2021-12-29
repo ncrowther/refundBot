@@ -23,7 +23,7 @@ app.get('/api/writeComment', async (req, res) => {
   } else {
     const randNo = Math.floor((Math.random() * 10) + 1)
 
-    if (randNo < 7) {
+    if (randNo < 8) {
       res.send({ response: '00: Ticket refunded' })
     } else {
       res.send({ response: '98: Refund error' })
