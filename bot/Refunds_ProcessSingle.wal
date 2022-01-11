@@ -1,7 +1,8 @@
 
-	w{BaF†Êç2¸Ñc´%defVar --name in_param_ticket --type String --value M3A83727 --parameter 
+	w{BaF†Êç2¸Ñc—&defVar --name in_param_ticket --type String --value M3A83727 --parameter 
 defVar --name in_param_repaymentAmt --type String --value "49.7" --parameter 
 defVar --name in_param_paymentType --type String --value Card --parameter 
+defVar --name in_param_refundReason --type String --value Covid --parameter 
 defVar --name out_success --type Boolean --value True --output 
 defVar --name out_code --type String --value 99 --output 
 defVar --name out_desc --type String --value FAILED --output 
@@ -125,7 +126,7 @@ endSub
 beginSub --name setRefundReason
 setVar --name "${controlId}" --value reason
 goSub --label waitWebClickId
-webSet --value Covid --selector "Id" --id "${controlId}" --simulatehuman 
+webSet --value "${in_param_refundReason}" --selector "Id" --id "${controlId}" --simulatehuman 
 endSub
 beginSub --name clickRefundButton
 setVar --name "${controlId}" --value submit
