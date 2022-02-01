@@ -1,0 +1,120 @@
+˜@defVar --name workflowSales --type Workflow
+defVar --name storeHistory --type StorageAdapter
+defVar --name confirmationOrder --type Boolean
+defVar --name confirmationDelivery --type Boolean
+defVar --name paymentConfirmation --type Boolean
+defVar --name numOrder --type Numeric
+defVar --name error --type Error
+defVar --name success --type Boolean
+defVar --name batchOfInstances --type WorkflowBatch
+defVar --name emailConnection --type EmailConnection
+defVar --name randomNumber --type Numeric
+defVar --name emailMessage --type String
+defVar --name message --type String
+defVar --name dateAndTime --type DateTime
+defVar --name desktopPath --type String
+defVar --name invoicePath --type String
+defVar --name attachment --type List --innertype String
+defVar --name invoice --type List --innertype String
+defVar --name dataTable --type DataTable
+defVar --name lines --type Numeric
+defVar --name columns --type Numeric
+defVar --name cont --type Numeric --value 1
+defVar --name name --type String
+defVar --name lastName --type String
+defVar --name email --type String
+defVar --name customerAddress --type String
+defVar --name product --type String
+defVar --name price --type Numeric
+defVar --name excelFile --type Excel
+defVar --name counter --type Numeric
+defVar --name recipient --type List --innertype String --value "[wdgacademy.user05@gmail.com]"
+defVar --name databaseConnection --type DbConnection
+defVar --name databasePath --type String
+defVar --name instances --type List --innertype WorkflowInstance
+defVar --name wfInstance --type WorkflowInstance
+createStorageAdapter --storageStrategy "Server" storeHistory=storageAdapter
+loadWorkflow --adapter ${storeHistory} --name workflowSales3 workflowSales=value
+mapWorkflowActivities --workflow ${workflowSales} --mappings "order=order,paymentConfirmation=paymentConfirmation,orderCanceled=orderCanceled,paymentRejected=paymentRejected,issueInvoice=issueInvoice,deliveryProcess=deliveryProcess,orderDelivered=orderDelivered,orderNotDelivered=orderNotDelivered"
+bindProcessVariables --workflow ${workflowSales} --mappings "confirmationOrder=${confirmationOrder},confirmationDelivery=${confirmationDelivery},paymentConfirmation=${paymentConfirmation},numOrder=${numOrder},product=${product},price=${price},name=${name},lastName=${lastName}"
+getBatch --workflow ${workflowSales} --key workflowSales9 batchOfInstances=Batch
+goSub --label connectEmail
+beginBatch --batch ${batchOfInstances}
+	listWorkflowInstances --workflow ${workflowSales} --status "New" instances=value
+	foreach --collection "${instances}" --variable "${wfInstance}"
+		executeWorkflow --instance ${wfInstance} error=error success=success
+	endFor
+endBatch
+goSub --label disconnectEmail
+logMessage --message "Instances executed" --type "Info"
+beginSub --name order
+generateRandomNumber --minimum 1 --maximum 15000 numOrder=value
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Your order ${numOrder} has been placed!\r\n\r\nWe are awaiting confirmation of your order!\r\n\r\nThank you for trusting us!"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+goSub --label generateRandomNumber
+setVarIf --variablename "${confirmationOrder}" --value True --left "${randomNumber}" --operator "Greater_Than_Equal_To" --right "0.3"
+setVarIf --variablename "${confirmationOrder}" --value False --left "${randomNumber}" --operator "Less_Than_Equal_To" --right "0.3"
+endSub
+beginSub --name paymentConfirmation
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Payment for your ${numOrder} order has been confirmed!\r\n\r\nThanks for shopping with us!"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+goSub --label generateRandomNumber
+setVarIf --variablename "${paymentConfirmation}" --value True --left "${randomNumber}" --operator "Greater_Than_Equal_To" --right "0.2"
+setVarIf --variablename "${paymentConfirmation}" --value False --left "${randomNumber}" --operator "Less_Than_Equal_To" --right "0.2"
+endSub
+beginSub --name orderCanceled
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Unfortunately, your ${numOrder} order has been canceled!\r\n\r\nIf you have any questions, do not hesitate to contact us."
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+endSub
+beginSub --name paymentRejected
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Payment for your ${numOrder} order has been declined!\r\n\r\nCheck your payment information and don\'t hesitate to contact us for more information."
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+endSub
+beginSub --name issueInvoice
+getCurrentDateAndTime --localorutc "LocalTime" dateAndTime=value
+getSpecialFolder --folder "Desktop" desktopPath=value
+writeToFile --value "Date: ${dateAndTime}\r\nOrder Number: ${numOrder}\r\nName: ${name} ${lastName}\r\nProduct: ${product}\r\nPrice: ${price}\r\n" --file "${desktopPath}\\Invoice.txt" --encoding "UTF8" --overwrite  invoicePath=value
+setVar --name "${message}" --value "Hi ${name} ${lastName}! This is the invoice number for your order ${numOrder}!\r\n\r\nThanks for shopping with us!"
+add --collection "${invoice}" --value "${invoicePath}"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=${invoice}"
+removeAt --index 1 --collection "${invoice}"
+removeAt --index 1 --collection "${attachment}"
+endSub
+beginSub --name deliveryProcess
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Your order ${numOrder} has been shipped!\r\n\r\nThanks for shopping with us!"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+goSub --label generateRandomNumber
+setVarIf --variablename "${confirmationDelivery}" --value True --left "${randomNumber}" --operator "Greater_Than_Equal_To" --right "0.1"
+setVarIf --variablename "${confirmationDelivery}" --value False --left "${randomNumber}" --operator "Less_Than_Equal_To" --right "0.1"
+endSub
+beginSub --name orderDelivered
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Your order ${numOrder} has been successfully delivered!\r\n\r\nIf this was not the case, contact us immediately!\r\n\r\nThank you for trusting us! We hope you enjoy your new product!"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+endSub
+beginSub --name orderNotDelivered
+setVar --name "${message}" --value "Hi ${name} ${lastName}! Your order ${numOrder} could not be delivered!\r\n\r\nPlease contact us to avoid cancellation!"
+goSub --label sendemail --assignments "${emailMessage}=${message},${attachment}=[1]"
+endSub
+beginSub --name sendemail
+if --left "${attachment}" --operator "Contains" --right 1
+	emailSend --connection ${emailConnection} --to ${recipient} --from "wdg.academy2@gmail.com" --subject "Order ${numOrder}" --bodytype "Text" --body "${emailMessage}"
+	logMessage --message "${emailMessage}" --type "Info"
+else
+	emailSend --connection ${emailConnection} --to ${recipient} --from "wdg.academy2@gmail.com" --subject "Order ${numOrder}" --bodytype "Text" --body "${emailMessage}" --attachments ${attachment}
+	logMessage --message "${emailMessage}" --type "Info"
+endIf
+endSub
+beginSub --name connectEmail
+smtpConnect --smtphost "smtp.gmail.com" --smtpport 587 --smtpusername "wdg.academy2@gmail.com" --smtppassword "Academia@123" --smtpusessl  --enableLog  emailConnection=value
+endSub
+beginSub --name disconnectEmail
+emailDisconnect --connection ${emailConnection}
+endSub
+beginSub --name generateRandomNumber
+generateRandomNumber --usedecimal  randomNumber=value
+endSub
+beginSub --name excelFile
+//sqliteConnect --connectionString "Data Source=\"C:\\Users\\mariana.lima\\Documents\\Pedidos.db\";Version=3;UseUTF16Encoding=True;BinaryGuid=False;" conexaoBancoDeDados=connection caminhoDoBanco=path
+excelOpen --file "C:\\Users\\MarianaCegarradeLima\\Documents\\Cursos\\Workflow\\EN\\Workflow & Web Client\\Orders.xlsx" excelFile=value
+excelGetTable --file ${excelFile} --sheet Orders --entiretable  --hasheaders  dataTable=value lines=rows columns=columns
+endSub*	20.12.5.0

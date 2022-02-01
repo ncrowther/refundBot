@@ -1,0 +1,48 @@
+
+	’W”y›³B’)…"¶%^¨ådefVar --name result_code --type String --value 00
+
+// onError --label Main_ErrorHandler
+//beginSub --name getErrorMessage
+//	getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+//	setVar --name "${errorMessage}" --value "An error occurred in RPA Robot.\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${wdg:errorMessage}\r\nSubroutine: ${wdg:errorSubName}\r\nLine Number: ${wdg:lineNumber}"
+//endSub
+
+//beginSub --name Main_ErrorHandler
+//	goSub --label getErrorMessage
+//	goSub --label sendErrorEmail
+//endSub
+
+
+goSub --label ProcessRefunds
+
+beginSub --name updateExcel
+	
+	logMessage --message "Update excel with the result of the refund operation" --type "Info"
+endSub
+
+
+beginSub --name ProcessRefunds
+// process the refunds stored in a spreadsheet
+	
+	logMessage --message "Starting refunds.  Read excel file containing customers to be refunded" --type "Info"
+	goSub --label refundCustomer
+	
+	goSub --label updateExcel
+	
+	if --left "${result_code}" --operator "Equal_To" --right 00 --comment "00 - Success"
+		goSub --label SendCustomerReceipt
+	endIf
+	
+endSub
+
+beginSub --name refundCustomer
+	
+// TODO: Refund individual customer by calling refund web site
+	logMessage --message "Refund individual customer using refund website" --type "Info"
+endSub
+
+beginSub --name SendCustomerReceipt
+// TODO email receipt
+	logMessage --message "If refund was successful, send the customer a refund receipt" --type "Info"
+	
+endSub"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.1.0

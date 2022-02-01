@@ -1,0 +1,79 @@
+
+	’W”y›³B’)…"¶%^¨ÐdefVar --name projectPath --type String --value "D:\\RPA\\github\\refundBot"
+defVar --name result_code --type String --value 00
+defVar --name robotName --type String --value "IBM RPA Refunds Robot"
+defVar --name errorDescription --type String
+defVar --name windowsHost --type String
+defVar --name retVal --type Boolean --value True
+defVar --name returnStatus --type String
+defVar --name processFileName --type String
+defVar --name excelFile --type Excel
+setVar --name "${processFileName}" --value "${projectPath}\\data\\refunds.xlsx"
+
+onError --label Main_ErrorHandler
+
+goSub --label ProcessRefunds
+
+beginSub --name updateExcel
+
+logMessage --message "Update excel with the result of the refund operation" --type "Info"
+endSub
+
+
+beginSub --name ProcessRefunds
+// process the refunds stored in a spreadsheet
+
+logMessage --message "Starting refunds.  Read excel file containing customers to be refunded" --type "Info"
+
+logMessage --message "Excel Path - ${processFileName}" --type "Info"
+excelOpen --file "${processFileName}" --savechanges  retVal=success returnStatus=reason excelFile=value
+if --left "${returnStatus}" --operator "Begins_With" --right "An error occurred"
+	setVar --name "${errorDescription}" --value "Error with Excel: ${returnStatus}\r\nPath : ${processFileName}"
+	failTest --message "Error reading exel"
+endIf
+if --left "${retVal}" --operator "Is_True" --negate 
+	setVar --name "${errorDescription}" --value "Error opening Excel: ${returnStatus}\r\nPath : ${processFileName}"
+	failTest --message "Error reading excel"
+endIf
+
+goSub --label refundCustomer
+
+goSub --label updateExcel
+
+if --left "${result_code}" --operator "Equal_To" --right 00 --comment "00 - Success"
+	goSub --label SendCustomerReceipt
+endIf
+
+endSub
+
+beginSub --name refundCustomer
+
+// TODO: Refund individual customer by calling refund web site
+logMessage --message "Refund individual customer using refund website" --type "Info"
+
+endSub
+
+beginSub --name SendCustomerReceipt
+// TODO email receipt
+logMessage --message "If refund was successful, send the customer a refund receipt" --type "Info"
+
+endSub
+
+beginSub --name SendErrorToAdmin
+// TODO email error to admin
+logMessage --message "Sending error message to admin: " --type "Info"
+logMessage --message "------------------------------------------------------------------------" --type "Info"
+logMessage --message "${errorDescription}" --type "Info"
+logMessage --message "------------------------------------------------------------------------" --type "Info"
+
+endSub
+
+beginSub --name getErrorMessage
+getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+setVar --name "${errorDescription}" --value "${errorDescription}\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${wdg:errorMessage}\r\nSubroutine: ${wdg:errorSubName}\r\nLine Number: ${wdg:lineNumber}"
+endSub
+
+beginSub --name Main_ErrorHandler
+goSub --label getErrorMessage
+goSub --label SendErrorToAdmin
+endSub"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.1.0

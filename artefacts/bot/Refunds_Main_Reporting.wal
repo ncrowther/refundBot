@@ -1,0 +1,221 @@
+
+	’W”y›³B’)…"¶%^¨„‚import --name RefundReceipt --type "File" --content 77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxYdHJhUmVwb3J0c0xheW91dFNlcmlhbGl6ZXIgU2VyaWFsaXplclZlcnNpb249IjE5LjIuNy4wIiBSZWY9IjAiIENvbnRyb2xUeXBlPSJEZXZFeHByZXNzLlh0cmFSZXBvcnRzLlVJLlh0cmFSZXBvcnQsIERldkV4cHJlc3MuWHRyYVJlcG9ydHMudjE5LjIsIFZlcnNpb249MTkuMi43LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YSIgTmFtZT0iUmVwb3J0MSIgUGFnZVdpZHRoPSI4NTAiIFBhZ2VIZWlnaHQ9IjExMDAiIFZlcnNpb249IjE5LjIiIEZvbnQ9IkFyaWFsLCA5Ljc1cHQiIEZvcmVDb2xvcj0iQmxhY2siPg0KICA8UGFyYW1ldGVycz4NCiAgICA8SXRlbTEgUmVmPSIyIiBEZXNjcmlwdGlvbj0iQ3VzdG9tZXIgTmFtZSIgTmFtZT0iQ3VzdG9tZXJOYW1lIiAvPg0KICAgIDxJdGVtMiBSZWY9IjMiIERlc2NyaXB0aW9uPSJQYXJhbWV0ZXIxIiBOYW1lPSJJbnZvaWNlTnVtYmVyIiAvPg0KICAgIDxJdGVtMyBSZWY9IjQiIERlc2NyaXB0aW9uPSJQYXJhbWV0ZXIxIiBOYW1lPSJBbW91bnQiIC8+DQogICAgPEl0ZW00IFJlZj0iNSIgRGVzY3JpcHRpb249IlBhcmFtZXRlcjEiIE5hbWU9IlJlZnVuZFJlYXNvbiIgLz4NCiAgICA8SXRlbTUgUmVmPSI2IiBEZXNjcmlwdGlvbj0iUGFyYW1ldGVyMSIgTmFtZT0iQ3VzdG9tZXJBZGRyZXNzIiAvPg0KICA8L1BhcmFtZXRlcnM+DQogIDxCYW5kcz4NCiAgICA8SXRlbTEgUmVmPSI3IiBDb250cm9sVHlwZT0iRGV0YWlsQmFuZCIgTmFtZT0iRGV0YWlsIiBIZWlnaHRGPSIzNSIgS2VlcFRvZ2V0aGVyPSJ0cnVlIiBUZXh0QWxpZ25tZW50PSJUb3BMZWZ0IiBTdHlsZU5hbWU9ImJhc2VDb250cm9sU3R5bGUiIFBhZGRpbmc9IjAsMCwwLDAsMTAwIj4NCiAgICAgIDxDb250cm9scz4NCiAgICAgICAgPEl0ZW0xIFJlZj0iOCIgQ29udHJvbFR5cGU9IlhSVGFibGUiIE5hbWU9ImRldGFpbFRhYmxlIiBTaXplRj0iNjUwLDM1IiBMb2NhdGlvbkZsb2F0PSIwLCAwIiBGb250PSJTZWdvZSBVSSwgOS43NXB0LCBzdHlsZT1Cb2xkIiBQYWRkaW5nPSIyLDIsNSwwLDEwMCI+DQogICAgICAgICAgPFJvd3M+DQogICAgICAgICAgICA8SXRlbTEgUmVmPSI5IiBDb250cm9sVHlwZT0iWFJUYWJsZVJvdyIgTmFtZT0iZGV0YWlsVGFibGVSb3ciIFdlaWdodD0iMTIuMzQzMzMzMzMzMzMzMzM0Ij4NCiAgICAgICAgICAgICAgPENlbGxzPg0KICAgICAgICAgICAgICAgIDxJdGVtMSBSZWY9IjEwIiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InByb2R1Y3ROYW1lIiBXZWlnaHQ9IjEuMjc5MTEwMzk4Njc3OTEzMSIgVGV4dD0iVHJhdmVsIFRpY2tldCI+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjExIiBVc2VQYWRkaW5nPSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0xPg0KICAgICAgICAgICAgICAgIDxJdGVtMiBSZWY9IjEyIiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InF1YW50aXR5IiBXZWlnaHQ9IjAuMjA3OTQxNDEwMzg0NTkyMzIiIFRleHQ9IjEiIFRleHRBbGlnbm1lbnQ9IlRvcFJpZ2h0Ij4NCiAgICAgICAgICAgICAgICAgIDxTdHlsZVByaW9yaXR5IFJlZj0iMTMiIFVzZVBhZGRpbmc9ImZhbHNlIiBVc2VUZXh0QWxpZ25tZW50PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0yPg0KICAgICAgICAgICAgICAgIDxJdGVtMyBSZWY9IjE0IiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InVuaXRQcmljZSIgV2VpZ2h0PSIwLjQzNTUwMTQ1OTUzNjAzMjE0IiBUZXh0Rm9ybWF0U3RyaW5nPSJ7MDokMC4wMH0iIFRleHQ9IiQwLjAwIiBUZXh0QWxpZ25tZW50PSJUb3BSaWdodCI+DQogICAgICAgICAgICAgICAgICA8RXhwcmVzc2lvbkJpbmRpbmdzPg0KICAgICAgICAgICAgICAgICAgICA8SXRlbTEgUmVmPSIxNSIgRXZlbnROYW1lPSJCZWZvcmVQcmludCIgUHJvcGVydHlOYW1lPSJUZXh0IiBFeHByZXNzaW9uPSI/QW1vdW50IiAvPg0KICAgICAgICAgICAgICAgICAgPC9FeHByZXNzaW9uQmluZGluZ3M+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjE2IiBVc2VQYWRkaW5nPSJmYWxzZSIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgICAgICAgICAgPC9JdGVtMz4NCiAgICAgICAgICAgICAgICA8SXRlbTQgUmVmPSIxNyIgQ29udHJvbFR5cGU9IlhSVGFibGVDZWxsIiBOYW1lPSJsaW5lVG90YWwiIFdlaWdodD0iMC41NDE5MTkwNjUzNDU0OTEyOCIgVGV4dEZvcm1hdFN0cmluZz0iezA6JDAuMDB9IiBUZXh0PSIkMC4wMCIgVGV4dEFsaWdubWVudD0iVG9wUmlnaHQiIEZvcmVDb2xvcj0iMjU1LDI1MywxMDIsNzgiPg0KICAgICAgICAgICAgICAgICAgPEV4cHJlc3Npb25CaW5kaW5ncz4NCiAgICAgICAgICAgICAgICAgICAgPEl0ZW0xIFJlZj0iMTgiIEV2ZW50TmFtZT0iQmVmb3JlUHJpbnQiIFByb3BlcnR5TmFtZT0iVGV4dCIgRXhwcmVzc2lvbj0iP0Ftb3VudCIgLz4NCiAgICAgICAgICAgICAgICAgIDwvRXhwcmVzc2lvbkJpbmRpbmdzPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSIxOSIgVXNlRm9udD0iZmFsc2UiIFVzZUZvcmVDb2xvcj0iZmFsc2UiIFVzZVBhZGRpbmc9ImZhbHNlIiBVc2VUZXh0QWxpZ25tZW50PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW00Pg0KICAgICAgICAgICAgICA8L0NlbGxzPg0KICAgICAgICAgICAgPC9JdGVtMT4NCiAgICAgICAgICA8L1Jvd3M+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSIyMCIgVXNlRm9udD0iZmFsc2UiIFVzZVBhZGRpbmc9ImZhbHNlIiAvPg0KICAgICAgICA8L0l0ZW0xPg0KICAgICAgPC9Db250cm9scz4NCiAgICA8L0l0ZW0xPg0KICAgIDxJdGVtMiBSZWY9IjIxIiBDb250cm9sVHlwZT0iVG9wTWFyZ2luQmFuZCIgTmFtZT0iVG9wTWFyZ2luIiBUZXh0QWxpZ25tZW50PSJUb3BMZWZ0IiBQYWRkaW5nPSIwLDAsMCwwLDEwMCI+DQogICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjIyIiBVc2VCYWNrQ29sb3I9ImZhbHNlIiAvPg0KICAgIDwvSXRlbTI+DQogICAgPEl0ZW0zIFJlZj0iMjMiIENvbnRyb2xUeXBlPSJCb3R0b21NYXJnaW5CYW5kIiBOYW1lPSJCb3R0b21NYXJnaW4iIFRleHRBbGlnbm1lbnQ9IlRvcExlZnQiIFBhZGRpbmc9IjAsMCwwLDAsMTAwIj4NCiAgICAgIDxDb250cm9scz4NCiAgICAgICAgPEl0ZW0xIFJlZj0iMjQiIENvbnRyb2xUeXBlPSJYUlRhYmxlIiBOYW1lPSJ2ZW5kb3JDb250YWN0c1RhYmxlIiBTaXplRj0iMzc4Ljk5OTEsMTUiIExvY2F0aW9uRmxvYXQ9IjI3MSwgMjUiIEZvbnQ9IlNlZ29lIFVJLCA3Ljc1cHQiIEJvcmRlckNvbG9yPSIyNTUsMjEzLDIxMSwyMDUiPg0KICAgICAgICAgIDxSb3dzPg0KICAgICAgICAgICAgPEl0ZW0xIFJlZj0iMjUiIENvbnRyb2xUeXBlPSJYUlRhYmxlUm93IiBOYW1lPSJ2ZW5kb3JDb250YWN0c1JvdyIgV2VpZ2h0PSIxIj4NCiAgICAgICAgICAgICAgPENlbGxzPg0KICAgICAgICAgICAgICAgIDxJdGVtMSBSZWY9IjI2IiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InZlbmRvcldlYnNpdGUiIFdlaWdodD0iMSIgQ2FuR3Jvdz0iZmFsc2UiIENhblNocmluaz0idHJ1ZSIgVGV4dD0iVmVuZG9yV2Vic2l0ZSIgVGV4dEFsaWdubWVudD0iTWlkZGxlTGVmdCI+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjI3IiBVc2VUZXh0QWxpZ25tZW50PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0xPg0KICAgICAgICAgICAgICAgIDxJdGVtMiBSZWY9IjI4IiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InZlbmRvckVtYWlsIiBXZWlnaHQ9IjEiIENhbkdyb3c9ImZhbHNlIiBDYW5TaHJpbms9InRydWUiIFRleHQ9IlZlbmRvckVtYWlsIiBUZXh0QWxpZ25tZW50PSJNaWRkbGVDZW50ZXIiPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSIyOSIgVXNlQm9yZGVycz0iZmFsc2UiIFVzZVRleHRBbGlnbm1lbnQ9ImZhbHNlIiAvPg0KICAgICAgICAgICAgICAgIDwvSXRlbTI+DQogICAgICAgICAgICAgICAgPEl0ZW0zIFJlZj0iMzAiIENvbnRyb2xUeXBlPSJYUlRhYmxlQ2VsbCIgTmFtZT0idmVuZG9yUGhvbmUiIFdlaWdodD0iMSIgQ2FuR3Jvdz0iZmFsc2UiIENhblNocmluaz0idHJ1ZSIgVGV4dD0iVmVuZG9yUGhvbmUiIFRleHRBbGlnbm1lbnQ9Ik1pZGRsZVJpZ2h0Ij4NCiAgICAgICAgICAgICAgICAgIDxTdHlsZVByaW9yaXR5IFJlZj0iMzEiIFVzZUJvcmRlcnM9ImZhbHNlIiBVc2VUZXh0QWxpZ25tZW50PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0zPg0KICAgICAgICAgICAgICA8L0NlbGxzPg0KICAgICAgICAgICAgPC9JdGVtMT4NCiAgICAgICAgICA8L1Jvd3M+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSIzMiIgVXNlRm9udD0iZmFsc2UiIFVzZUJvcmRlckNvbG9yPSJmYWxzZSIgLz4NCiAgICAgICAgPC9JdGVtMT4NCiAgICAgICAgPEl0ZW0yIFJlZj0iMzMiIENvbnRyb2xUeXBlPSJYUkxhYmVsIiBOYW1lPSJ0aGFua1lvdUxhYmVsIiBDYW5Hcm93PSJmYWxzZSIgVGV4dD0iVGhhbmsgeW91ISIgVGV4dEFsaWdubWVudD0iTWlkZGxlTGVmdCIgU2l6ZUY9IjExMC40MTY3LDQwIiBMb2NhdGlvbkZsb2F0PSIzOS41NDI5LCA5Ljk5OTk3NCIgRm9udD0iU2Vnb2UgVUksIDE0cHQiIFBhZGRpbmc9IjIsMiwwLDAsMTAwIj4NCiAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjM0IiBVc2VGb250PSJmYWxzZSIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgIDwvSXRlbTI+DQogICAgICAgIDxJdGVtMyBSZWY9IjM1IiBDb250cm9sVHlwZT0iWFJMYWJlbCIgTmFtZT0iaGVhcnRMYWJlbCIgQ2FuR3Jvdz0iZmFsc2UiIFRleHQ9IuKZpSIgVGV4dEFsaWdubWVudD0iTWlkZGxlTGVmdCIgU2l6ZUY9IjM5LjU0Mjg2LDQwIiBMb2NhdGlvbkZsb2F0PSIwLCA5Ljk5OTk3NCIgRm9udD0iU2Vnb2UgVUksIDI0cHQiIEZvcmVDb2xvcj0iMjU1LDI1MywxMDIsNzgiIFBhZGRpbmc9IjIsMiwwLDAsMTAwIj4NCiAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjM2IiBVc2VGb250PSJmYWxzZSIgVXNlRm9yZUNvbG9yPSJmYWxzZSIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgIDwvSXRlbTM+DQogICAgICA8L0NvbnRyb2xzPg0KICAgIDwvSXRlbTM+DQogICAgPEl0ZW00IFJlZj0iMzciIENvbnRyb2xUeXBlPSJHcm91cEhlYWRlckJhbmQiIE5hbWU9Ikdyb3VwSGVhZGVyMiIgR3JvdXBVbmlvbj0iV2l0aEZpcnN0RGV0YWlsIiBMZXZlbD0iMSIgSGVpZ2h0Rj0iMjMwIiBTdHlsZU5hbWU9ImJhc2VDb250cm9sU3R5bGUiPg0KICAgICAgPEdyb3VwRmllbGRzPg0KICAgICAgICA8SXRlbTEgUmVmPSIzOCIgRmllbGROYW1lPSJJbnZvaWNlTnVtYmVyIiAvPg0KICAgICAgPC9Hcm91cEZpZWxkcz4NCiAgICAgIDxDb250cm9scz4NCiAgICAgICAgPEl0ZW0xIFJlZj0iMzkiIENvbnRyb2xUeXBlPSJYUlRhYmxlIiBOYW1lPSJpbnZvaWNlSW5mb1RhYmxlIiBTaXplRj0iMzE1LjA0MjEsNTAiIExvY2F0aW9uRmxvYXQ9IjAsIDEyOS4xNjY2Ij4NCiAgICAgICAgICA8Um93cz4NCiAgICAgICAgICAgIDxJdGVtMSBSZWY9IjQwIiBDb250cm9sVHlwZT0iWFJUYWJsZVJvdyIgTmFtZT0iaW52b2ljZURhdGVSb3ciIFdlaWdodD0iMSI+DQogICAgICAgICAgICAgIDxDZWxscz4NCiAgICAgICAgICAgICAgICA8SXRlbTEgUmVmPSI0MSIgQ29udHJvbFR5cGU9IlhSVGFibGVDZWxsIiBOYW1lPSJpbnZvaWNlRGF0ZUNhcHRpb24iIFdlaWdodD0iMC40OTY1NTkyOTE3MTI3NTEzMiIgQ2FuU2hyaW5rPSJ0cnVlIiBUZXh0PSJEYXRlIElzc3VlZDoiIFRleHRBbGlnbm1lbnQ9IlRvcExlZnQiPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI0MiIgVXNlRm9udD0iZmFsc2UiIFVzZVBhZGRpbmc9ImZhbHNlIiBVc2VUZXh0QWxpZ25tZW50PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0xPg0KICAgICAgICAgICAgICAgIDxJdGVtMiBSZWY9IjQzIiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9Imludm9pY2VEYXRlIiBXZWlnaHQ9IjEuMzY4MDMxMjE3NDg3NTk4OCIgQ2FuU2hyaW5rPSJ0cnVlIiBUZXh0Rm9ybWF0U3RyaW5nPSJ7MDpkIE1NTU0geXl5eX0iIFRleHQ9Ikludm9pY2VEYXRlIiBGb250PSJTZWdvZSBVSSwgOXB0LCBzdHlsZT1Cb2xkIj4NCiAgICAgICAgICAgICAgICAgIDxTdHlsZVByaW9yaXR5IFJlZj0iNDQiIFVzZUZvbnQ9ImZhbHNlIiAvPg0KICAgICAgICAgICAgICAgIDwvSXRlbTI+DQogICAgICAgICAgICAgIDwvQ2VsbHM+DQogICAgICAgICAgICA8L0l0ZW0xPg0KICAgICAgICAgICAgPEl0ZW0yIFJlZj0iNDUiIENvbnRyb2xUeXBlPSJYUlRhYmxlUm93IiBOYW1lPSJpbnZvaWNlTnVtYmVyUm93IiBXZWlnaHQ9IjEiPg0KICAgICAgICAgICAgICA8Q2VsbHM+DQogICAgICAgICAgICAgICAgPEl0ZW0xIFJlZj0iNDYiIENvbnRyb2xUeXBlPSJYUlRhYmxlQ2VsbCIgTmFtZT0iaW52b2ljZU51bWJlckNhcHRpb24iIFdlaWdodD0iMC40OTY1NTkyOTE3MTI3NTEzMiIgQ2FuU2hyaW5rPSJ0cnVlIiBUZXh0PSJJbnZvaWNlIE5vOiIgVGV4dEFsaWdubWVudD0iVG9wTGVmdCI+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjQ3IiBVc2VGb250PSJmYWxzZSIgVXNlUGFkZGluZz0iZmFsc2UiIFVzZVRleHRBbGlnbm1lbnQ9ImZhbHNlIiAvPg0KICAgICAgICAgICAgICAgIDwvSXRlbTE+DQogICAgICAgICAgICAgICAgPEl0ZW0yIFJlZj0iNDgiIENvbnRyb2xUeXBlPSJYUlRhYmxlQ2VsbCIgTmFtZT0iaW52b2ljZU51bWJlciIgV2VpZ2h0PSIxLjM2ODAzMTIxNzQ4NzU5ODgiIENhblNocmluaz0idHJ1ZSIgVGV4dD0iMDAwMDAxIiBGb250PSJTZWdvZSBVSSwgOXB0LCBzdHlsZT1Cb2xkIj4NCiAgICAgICAgICAgICAgICAgIDxFeHByZXNzaW9uQmluZGluZ3M+DQogICAgICAgICAgICAgICAgICAgIDxJdGVtMSBSZWY9IjQ5IiBFdmVudE5hbWU9IkJlZm9yZVByaW50IiBQcm9wZXJ0eU5hbWU9IlRleHQiIEV4cHJlc3Npb249Ij9JbnZvaWNlTnVtYmVyIiAvPg0KICAgICAgICAgICAgICAgICAgPC9FeHByZXNzaW9uQmluZGluZ3M+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjUwIiBVc2VGb250PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0yPg0KICAgICAgICAgICAgICA8L0NlbGxzPg0KICAgICAgICAgICAgPC9JdGVtMj4NCiAgICAgICAgICA8L1Jvd3M+DQogICAgICAgIDwvSXRlbTE+DQogICAgICAgIDxJdGVtMiBSZWY9IjUxIiBDb250cm9sVHlwZT0iWFJUYWJsZSIgTmFtZT0iY3VzdG9tZXJUYWJsZSIgU2l6ZUY9IjIwMS4wNTE0LDI1IiBMb2NhdGlvbkZsb2F0PSIwLCA4OS45OTk5OSI+DQogICAgICAgICAgPFJvd3M+DQogICAgICAgICAgICA8SXRlbTEgUmVmPSI1MiIgQ29udHJvbFR5cGU9IlhSVGFibGVSb3ciIE5hbWU9ImN1c3RvbWVyTmFtZVJvdyIgV2VpZ2h0PSIxIj4NCiAgICAgICAgICAgICAgPENlbGxzPg0KICAgICAgICAgICAgICAgIDxJdGVtMSBSZWY9IjUzIiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9ImN1c3RvbWVyTmFtZSIgV2VpZ2h0PSIxLjE5MTU0NzcyODQ2ODU1ODEiIENhblNocmluaz0idHJ1ZSIgVGV4dD0iQ3VzdG9tZXJOYW1lIiBGb250PSJTZWdvZSBVSSwgMTRwdCI+DQogICAgICAgICAgICAgICAgICA8RXhwcmVzc2lvbkJpbmRpbmdzPg0KICAgICAgICAgICAgICAgICAgICA8SXRlbTEgUmVmPSI1NCIgRXZlbnROYW1lPSJCZWZvcmVQcmludCIgUHJvcGVydHlOYW1lPSJUZXh0IiBFeHByZXNzaW9uPSI/Q3VzdG9tZXJOYW1lIiAvPg0KICAgICAgICAgICAgICAgICAgPC9FeHByZXNzaW9uQmluZGluZ3M+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjU1IiBVc2VGb250PSJmYWxzZSIgVXNlUGFkZGluZz0iZmFsc2UiIC8+DQogICAgICAgICAgICAgICAgPC9JdGVtMT4NCiAgICAgICAgICAgICAgPC9DZWxscz4NCiAgICAgICAgICAgIDwvSXRlbTE+DQogICAgICAgICAgPC9Sb3dzPg0KICAgICAgICA8L0l0ZW0yPg0KICAgICAgICA8SXRlbTMgUmVmPSI1NiIgQ29udHJvbFR5cGU9IlhSVGFibGUiIE5hbWU9InZlbmRvclRhYmxlIiBUZXh0QWxpZ25tZW50PSJUb3BSaWdodCIgU2l6ZUY9IjMwMCwxMDAiIExvY2F0aW9uRmxvYXQ9IjM1MCwgODkuOTk5OTkiPg0KICAgICAgICAgIDxSb3dzPg0KICAgICAgICAgICAgPEl0ZW0xIFJlZj0iNTciIENvbnRyb2xUeXBlPSJYUlRhYmxlUm93IiBOYW1lPSJ2ZW5kb3JBZGRyZXNzUm93IiBXZWlnaHQ9IjQuMDAwMDAwMDAwMDAwMDAwOSI+DQogICAgICAgICAgICAgIDxDZWxscz4NCiAgICAgICAgICAgICAgICA8SXRlbTEgUmVmPSI1OCIgQ29udHJvbFR5cGU9IlhSVGFibGVDZWxsIiBOYW1lPSJ2ZW5kb3JBZGRyZXNzIiBXZWlnaHQ9IjEiIENhblNocmluaz0idHJ1ZSIgVGV4dD0iVmVuZG9yQWRkcmVzcyI+DQogICAgICAgICAgICAgICAgICA8RXhwcmVzc2lvbkJpbmRpbmdzPg0KICAgICAgICAgICAgICAgICAgICA8SXRlbTEgUmVmPSI1OSIgRXZlbnROYW1lPSJCZWZvcmVQcmludCIgUHJvcGVydHlOYW1lPSJUZXh0IiBFeHByZXNzaW9uPSI/Q3VzdG9tZXJBZGRyZXNzIiAvPg0KICAgICAgICAgICAgICAgICAgPC9FeHByZXNzaW9uQmluZGluZ3M+DQogICAgICAgICAgICAgICAgICA8U3R5bGVQcmlvcml0eSBSZWY9IjYwIiBVc2VGb250PSJmYWxzZSIgLz4NCiAgICAgICAgICAgICAgICA8L0l0ZW0xPg0KICAgICAgICAgICAgICA8L0NlbGxzPg0KICAgICAgICAgICAgPC9JdGVtMT4NCiAgICAgICAgICA8L1Jvd3M+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI2MSIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgIDwvSXRlbTM+DQogICAgICAgIDxJdGVtNCBSZWY9IjYyIiBDb250cm9sVHlwZT0iWFJQaWN0dXJlQm94IiBOYW1lPSJ2ZW5kb3JMb2dvIiBJbWFnZVNvdXJjZT0iaW1nLGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFQMEFBQUI0Q0FNQUFBQU9sZ1NsQUFBQUJHZEJUVUVBQUxHUEMveGhCUUFBQXdCUVRGUkZ3OFBEeDhmSHk4dkx6OC9QMDlQVDE5ZlgyOXZiMzkvZjQrUGo1K2ZuNit2cjcrL3Y4L1B6OS9mMysvdjcvLy8vQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBdDYzckl3QUFBQWx3U0ZsekFBQU92UUFBRHIwQlIvdVFyUUFBQUJoMFJWaDBVMjltZEhkaGNtVUFjR0ZwYm5RdWJtVjBJRFF1TUM0NWJETitUZ0FBQlBwSlJFRlVlRjd0bXRGNmd5QU1oU3RxRmJYMi9kOTJpSkVjcURyWTE2eGJtLzlxSXFhY0pZU0FYaFJGVVJSRlVSUkZVUlJGVVJSRlVSUkZVUlJGVWY0djlYVWZ1djNtOVBkOUtyci8zbnkyK3VaR2NpUG1ubTYvUGUwNGsyWmlIbHU2OVJuVUV3bDNYQTAxZmc0RFNYZDhubmhWdjZIcVB3eFZUNmo2WDZGcDZJK1g4L3ZxbS9GKy95dnl5OVdiYXorTTAyMGFiWDlhSDVtbTdleXdkQndzZHpTK3ZMclJGWkZyOHVrVXFqYzIzaDNjN0lFYnIxQkVMc3kyWHBvYnFxMmhvczQyS1VDUitocDZCMFl2SzhMMHlRYkNNNW5MbGY2OEQ5UXoyNlFNSmVvNzZwZ3lKSnZpbzM1My9yRXQ5SE5OQ3BHdnZuTFphdU5tTGU0UG5WY0JOam5icm0yN1lTY1ExbjEwdGtrcHN0VlhZU0xQMTlVeFY1NnZNenpMcHlhYmdwbzdUdjJLdDVCdFVveHM5ZHd4VE1vMWYzc21hbko1alZyYytFUDBWc0dwM09iSU5TbEhybnIyYUVjdERzT2hhcW5wd3NFTXAwU1dtcUxHYkpOeVpLbzMxTWQ1ajFvOElZY0g5MVYwNllERVhWTVRQcDV0VXBCTTlidk9pN1RTR3RiU3BRT0NIUHFGWDhrMktVaWVldlpUVXFSQ1RVTjVpNjRTajNJOGI4L25teFFrVHoyY2ZzY2pndlY2bmJ6Y002cG1PWmR2Y3p6ZnBDQjU2Zzh6TVUvbysrZ2IyUGNINnJjd3p6Y3BTSlo2bUl2cGdLalpzVVk2TEhqK211RElwemRsQlNZRnlWSVBxU3hkaGxqVytqeW8yczk2Tk1rTFRBcVNwUjZtWXBTZkhSelNwT3N4dnprNEluWUsvRzlOeXBHbG5oZW5oMFFFR1hyZHRmTEVCNS95cjJ4U1MwektrYVVlT3FWRGhYMEt6ZWd3ZUs3VU9aSGR0dWxRWkZLTUxQVW40NEhueWExUTEyMXpQTXlHcmFYUXBCaW42bzIxM2pGNVE5MTh5R0x2MDlEM0EremJlQjZYbVpUaVZMMnJTUHlpY3pJZXVCVlVHTWhieUFTRmU2RkpJVTdWTHlxV1ZraFJhU3lDRHpsRlZYc25XN2RJU3FsSkdjN1UrM1ZxQ1Zhb1N0UEZHWVlhTFU4TkdIYk1RM1QzUnlZRk9GUHY3eTBlZzlJazNYZkI4aFE5NzA4cmV6c01nKzI3OWpHc2ZtQlNnQlAxYTRHMnpFcllqNlZsS1lkNFZOZDcxNTVsN0hLVEVweW9YK3NXTHdIU3RyOFZnQklXQXBqUzNtbmNGcHFVNFVUOUdvRitCSkNqNGw1Y3dtTFNvOWc5WGEzTFRBcHhySjVpMDhjbDdEcmpSWWpMZGZCZ3lHZzIvWWNDWlNhRk9GWlBHdGJkTitmaGVEZk9HUXBXYlZqdXA3NDVPcUFwTWluRXNYclNzQTROVWpTZU5VSlZDeUloYVM5TWRpZm5GNW9VNGxEOU52MG83M0svc0ZGeGNDdE9VVmpMTi9aZVRaYVlGT0pRL1hhREpsL0Y0VHlHc2ZKdU5rNXdVSzh3Yy9vUEtESXBRTlZhS0VsSFY1b3cxQmhTVHczTDhPcVZpdk5Uc21SWGtOQ1JPWjdKSlNhZnp1N0w0MGVvTjc1a3VzK2p0WEQ1dUM3WFBhUSs0QmI1djhqa2M0R3pwVk9vdTNQTXdYOXJmcHlnVmV0ZjNFSmdCYUxscmNEa2s5bkpUYnRROTRYbGs1dVV1WDlJNkJSVWJqZmY5RW4rZDhTcmU2YkpwL01EOVc2d3lXY20wL291R2pHYlA5Y2dyNjdKKy90MEljc3crWWVBVDR6YW5YR0dRaFV5WEJORndHTXkvOGJrLzRIZlFFZlIyNEgvazNjM2J3U3Y0VW1SRHUvbDVjdjNWOEVidFBUTWdzc1krVmV6cjRLWDBYVEI1bTM3Ky9yK2FPUG1vUFozbnZlYzNGTVA4MUdXL01iMVZVRHRGbGMxUE85L1llUDZLbURUUGtjZkhYSE9mMS9YUnljYnRHL3o4QWVMNGllVnJ3VFdkWmZmMm5vSmN3T3ZOdDVhUEhwNVpjWnIrYjNicXprNjJuRGEvL1QrNVZtWTNhT05xZnNFN1o2Nkd5YW83RWRMSDJGL0VKVXhkVlBYNXVPRUs0cWlLSXFpS0lxaUtJcWlLSXFpS0lxeXorWHlCWk5JeW9lYUI3elBBQUFBQUVsRlRrU3VRbUNDIiBTaXppbmc9IlNxdWVlemUiIEltYWdlQWxpZ25tZW50PSJUb3BMZWZ0IiBTaXplRj0iMTUwLDcxIiBMb2NhdGlvbkZsb2F0PSI0OTkuOTk5MSwgMCI+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI2MyIgVXNlUGFkZGluZz0iZmFsc2UiIFVzZUJvcmRlcnM9ImZhbHNlIiAvPg0KICAgICAgICA8L0l0ZW00Pg0KICAgICAgICA8SXRlbTUgUmVmPSI2NCIgQ29udHJvbFR5cGU9IlhSTGFiZWwiIE5hbWU9Imludm9pY2VMYWJlbCIgVGV4dD0iUmVmdW5kIiBTaXplRj0iMTg1LDUwIiBMb2NhdGlvbkZsb2F0PSIwLjAwMDQxODI3ODIsIDkuOTk5OTk1IiBGb250PSJTZWdvZSBVSSwgMjYuMjVwdCwgc3R5bGU9Qm9sZCwgY2hhclNldD0wIiBQYWRkaW5nPSIyLDIsMCwwLDEwMCI+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI2NSIgVXNlRm9udD0iZmFsc2UiIC8+DQogICAgICAgIDwvSXRlbTU+DQogICAgICA8L0NvbnRyb2xzPg0KICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI2NiIgVXNlQmFja0NvbG9yPSJmYWxzZSIgLz4NCiAgICA8L0l0ZW00Pg0KICAgIDxJdGVtNSBSZWY9IjY3IiBDb250cm9sVHlwZT0iR3JvdXBGb290ZXJCYW5kIiBOYW1lPSJHcm91cEZvb3RlcjEiIEhlaWdodEY9IjEyLjAwMDAxIiBTdHlsZU5hbWU9ImJhc2VDb250cm9sU3R5bGUiPg0KICAgICAgPENvbnRyb2xzPg0KICAgICAgICA8SXRlbTEgUmVmPSI2OCIgQ29udHJvbFR5cGU9IlhSVGFibGUiIE5hbWU9InN1YnRvdGFsVGFibGUiIFNpemVGPSI2NTAsMiIgTG9jYXRpb25GbG9hdD0iMCwgMTAuMDAwMDEiIEZvbnQ9IlNlZ29lIFVJLCA4cHQiIEZvcmVDb2xvcj0iMjU1LDkwLDg2LDg1IiBQYWRkaW5nPSIyLDIsNSwwLDEwMCIgQm9yZGVyQ29sb3I9IjI1NSwyMDMsMjAxLDE5NCI+DQogICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI2OSIgVXNlRm9udD0iZmFsc2UiIFVzZUZvcmVDb2xvcj0iZmFsc2UiIFVzZVBhZGRpbmc9ImZhbHNlIiBVc2VCb3JkZXJDb2xvcj0iZmFsc2UiIC8+DQogICAgICAgIDwvSXRlbTE+DQogICAgICA8L0NvbnRyb2xzPg0KICAgIDwvSXRlbTU+DQogICAgPEl0ZW02IFJlZj0iNzAiIENvbnRyb2xUeXBlPSJHcm91cEhlYWRlckJhbmQiIE5hbWU9Ikdyb3VwSGVhZGVyMSIgUmVwZWF0RXZlcnlQYWdlPSJ0cnVlIiBIZWlnaHRGPSI1MCIgU3R5bGVOYW1lPSJiYXNlQ29udHJvbFN0eWxlIj4NCiAgICAgIDxDb250cm9scz4NCiAgICAgICAgPEl0ZW0xIFJlZj0iNzEiIENvbnRyb2xUeXBlPSJYUlRhYmxlIiBOYW1lPSJoZWFkZXJUYWJsZSIgU2l6ZUY9IjY1MCwzMiIgTG9jYXRpb25GbG9hdD0iMCwgMCIgRm9udD0iU2Vnb2UgVUksIDhwdCIgRm9yZUNvbG9yPSIyNTUsOTAsODYsODUiIFBhZGRpbmc9IjIsMiw1LDAsMTAwIiBCb3JkZXJDb2xvcj0iMjU1LDIwMywyMDEsMTk0IiBCb3JkZXJzPSJCb3R0b20iPg0KICAgICAgICAgIDxSb3dzPg0KICAgICAgICAgICAgPEl0ZW0xIFJlZj0iNzIiIENvbnRyb2xUeXBlPSJYUlRhYmxlUm93IiBOYW1lPSJoZWFkZXJUYWJsZVJvdyIgV2VpZ2h0PSIxMS41Ij4NCiAgICAgICAgICAgICAgPENlbGxzPg0KICAgICAgICAgICAgICAgIDxJdGVtMSBSZWY9IjczIiBDb250cm9sVHlwZT0iWFJUYWJsZUNlbGwiIE5hbWU9InByb2R1Y3ROYW1lQ2FwdGlvbiIgV2VpZ2h0PSIxLjI2MTEyNTIyNjk5MDA0NjQiIFRleHQ9IkRFU0NSSVBUSU9OIj4NCiAgICAgICAgICAgICAgICAgIDxTdHlsZVByaW9yaXR5IFJlZj0iNzQiIFVzZVBhZGRpbmc9ImZhbHNlIiAvPg0KICAgICAgICAgICAgICAgIDwvSXRlbTE+DQogICAgICAgICAgICAgICAgPEl0ZW0yIFJlZj0iNzUiIENvbnRyb2xUeXBlPSJYUlRhYmxlQ2VsbCIgTmFtZT0icXVhbnRpdHlDYXB0aW9uIiBXZWlnaHQ9IjAuMjA0OTU0NzU5NTk3MDU0NjciIFRleHQ9IlFUWSIgVGV4dEFsaWdubWVudD0iVG9wUmlnaHQiPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI3NiIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgICAgICAgICAgPC9JdGVtMj4NCiAgICAgICAgICAgICAgICA8SXRlbTMgUmVmPSI3NyIgQ29udHJvbFR5cGU9IlhSVGFibGVDZWxsIiBOYW1lPSJ1bml0UHJpY2VDYXB0aW9uIiBXZWlnaHQ9IjAuNDI5MzgxNDQ2OTUzMzE3IiBUZXh0PSJQUklDRSIgVGV4dEFsaWdubWVudD0iVG9wUmlnaHQiPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI3OCIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgICAgICAgICAgPC9JdGVtMz4NCiAgICAgICAgICAgICAgICA8SXRlbTQgUmVmPSI3OSIgQ29udHJvbFR5cGU9IlhSVGFibGVDZWxsIiBOYW1lPSJsaW5lVG90YWxDYXB0aW9uQ2VsbCIgV2VpZ2h0PSIwLjUzNDU1MjExODQyMjU3NDMzIiBUZXh0PSJUT1RBTCIgVGV4dEFsaWdubWVudD0iVG9wUmlnaHQiPg0KICAgICAgICAgICAgICAgICAgPFN0eWxlUHJpb3JpdHkgUmVmPSI4MCIgVXNlVGV4dEFsaWdubWVudD0iZmFsc2UiIC8+DQogICAgICAgICAgICAgICAgPC9JdGVtND4NCiAgICAgICAgICAgICAgPC9DZWxscz4NCiAgICAgICAgICAgIDwvSXRlbTE+DQogICAgICAgICAgPC9Sb3dzPg0KICAgICAgICAgIDxTdHlsZVByaW9yaXR5IFJlZj0iODEiIFVzZUZvbnQ9ImZhbHNlIiBVc2VGb3JlQ29sb3I9ImZhbHNlIiBVc2VQYWRkaW5nPSJmYWxzZSIgVXNlQm9yZGVyQ29sb3I9ImZhbHNlIiBVc2VCb3JkZXJzPSJmYWxzZSIgLz4NCiAgICAgICAgPC9JdGVtMT4NCiAgICAgIDwvQ29udHJvbHM+DQogICAgPC9JdGVtNj4NCiAgPC9CYW5kcz4NCiAgPFN0eWxlU2hlZXQ+DQogICAgPEl0ZW0xIFJlZj0iODIiIE5hbWU9ImJhc2VDb250cm9sU3R5bGUiIEJvcmRlclN0eWxlPSJJbnNldCIgUGFkZGluZz0iMiwyLDAsMCwxMDAiIEZvbnQ9IlNlZ29lIFVJLCA5Ljc1cHQiIFN0cmluZ0Zvcm1hdD0iTmVhcjtOZWFyOzA7Tm9uZTtDaGFyYWN0ZXI7RGVmYXVsdCIgLz4NCiAgPC9TdHlsZVNoZWV0Pg0KPC9YdHJhUmVwb3J0c0xheW91dFNlcmlhbGl6ZXI+ --extension ".repx"
+defVar --name projectPath --type String --value "D:\\RPA\\github\\refundBot"
+defVar --name fileLocation --type String
+defVar --name processFileName --type String
+defVar --name fileDataTable --type DataTable
+defVar --name fileRowCount --type Numeric
+defVar --name tableIndex --type Numeric --value 1
+defVar --name ticket_number --type String
+defVar --name excelFile --type Excel
+defVar --name rpa_status --type String
+defVar --name payment_type --type String
+defVar --name payment_value --type String
+defVar --name success --type Boolean
+defVar --name error_code --type String
+defVar --name error_desc --type String
+defVar --name retVal --type Boolean
+defVar --name stopwatch --type Stopwatch
+defVar --name totalHours --type Numeric
+defVar --name totalMinutes --type Numeric
+defVar --name totalSeconds --type Numeric
+defVar --name result_code --type String
+defVar --name result_desc --type String
+defVar --name totalRunTime --type TimeSpan
+defVar --name timing_minutes --type Numeric
+defVar --name timing_seconds --type Numeric
+defVar --name timing_milliseconds --type Numeric
+defVar --name attachments --type List --innertype String
+defVar --name refundCount --type Numeric --value 0
+defVar --name noRefundCount --type Numeric --value 0
+defVar --name processedCount --type Numeric --value 0
+defVar --name rowPassCountStr --type String
+defVar --name rowPassCount --type Numeric --value 0
+defVar --name retryCount --type Numeric --value 3
+defVar --name columnStartCounter --type Numeric
+defVar --name currentDateTime --type DateTime
+defVar --name filePrefix --type String
+defVar --name colIdxTicketNo --type Numeric --value 1
+defVar --name colIdxCustomerName --type Numeric --value 2
+defVar --name colIdxCustomerAddress --type Numeric --value 3
+defVar --name colIdxPaymentType --type Numeric --value 4
+defVar --name colIdxPaymentValue --type Numeric --value 5
+defVar --name colIdxPaymentDate --type Numeric --value 6
+defVar --name colIdxDestination --type Numeric --value 7
+defVar --name colIdxReason --type Numeric --value 8
+defVar --name colIdxEmail --type Numeric --value 9
+defVar --name colIdxCode --type Numeric --value 10
+defVar --name colIdxDesc --type Numeric --value 11
+defVar --name colIdxTime --type Numeric --value 12
+defVar --name colIdxPass --type Numeric --value 13
+defVar --name rpaStatusCode --type String
+defVar --name robotName --type String --value "IBM RPA Refunds Robot"
+defVar --name errorDescription --type String
+defVar --name windowsHost --type String
+defVar --name stats --type String
+defVar --name returnStatus --type String
+defVar --name emailBody --type String
+defVar --name customerName --type String
+defVar --name customerAddress --type String
+defVar --name paymentDate --type String
+defVar --name destination --type String
+defVar --name cancellationReason --type String
+defVar --name customerEmail --type String
+setVar --name "${processFileName}" --value "${projectPath}\\data\\refunds.xlsx"
+
+onError --label Main_ErrorHandler
+
+logMessage --message "${robotName} Started" --type "Info"
+startTimer stopwatch=value
+
+//getParameter --name retryCount --comment "Get the number of times a failed ticket is retried" retryCount=value
+
+goSub --label ProcessRefunds
+
+beginSub --name updateExcel
+setVar --name "${columnStartCounter}" --value 10
+getCurrentDateAndTime --localorutc "LocalTime" --comment "Get time for each record" currentDateTime=value
+excelSet --value "${result_code}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${columnStartCounter} --comment "Set result code"
+evaluate --expression "${columnStartCounter}+1" columnStartCounter=value
+excelSet --value "${result_desc}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${columnStartCounter} --comment "Set result desc"
+evaluate --expression "${columnStartCounter}+1" columnStartCounter=value
+excelSet --value "${currentDateTime}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${columnStartCounter} --comment "Set Date and Time"
+evaluate --expression "${columnStartCounter}+1" columnStartCounter=value
+evaluate --expression "${rowPassCount}+1" rowPassCount=value
+excelSet --value "${rowPassCount}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${columnStartCounter} --comment "Set number of times this row has been processed"
+endSub
+
+beginSub --name getExcelValues
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxTicketNo} --comment "Get Ticket Number" ticket_number=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxCustomerName} --comment "Get Customer Name" customerName=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxCustomerAddress} --comment "Get Customer Address" customerAddress=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentType} --comment "Get Payment Type" payment_type=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentValue} --comment "Get Payment Value" payment_value=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentDate} --comment "Get Payment Date" paymentDate=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxDestination} --comment "Get Destination" destination=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxReason} --comment "Get Cancellation Reason" cancellationReason=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxEmail} --comment "Get Customer Email" customerEmail=value
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxCode} --comment "Get RPA Status Code" rpaStatusCode=value
+
+excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPass} --comment "Get number of times this row has been attemted" rowPassCountStr=value
+if --left "${rowPassCountStr}" --operator "Is_Null"
+	setVar --name "${rowPassCount}" --value 0
+else
+	convertStringToNumber --text "${rowPassCountStr}" rowPassCount=value
+endIf
+
+// VALIDATE
+trimString --text "${ticket_number}" --trimoption "TrimStartAndEnd" ticket_number=value
+trimString --text "${payment_type}" --trimoption "TrimStartAndEnd" payment_type=value
+trimString --text "${payment_value}" --trimoption "TrimStartAndEnd" payment_value=value
+
+logMessage --message "\r\nTicket Number - ${ticket_number}\r\nStatus - ${rpa_status}\r\nStatus Code - ${rpaStatusCode}\r\nPayment Type - ${payment_type}\r\nPayment Value - ${payment_value}\r\n" --type "Info"
+endSub
+
+beginSub --name refundCustomer
+evaluate --expression "${processedCount} + 1" --comment "Row Count for Report" processedCount=value
+goSub --label getExcelValues --comment "Get excel values"
+
+if --left "${rpaStatusCode}" --operator "Is_Null_Or_Empty" --negate  --comment "Row has already been processed"
+	if --left "${rpaStatusCode}" --operator "Less_Than" --right 98 --comment "Don\'t reprocess error codes less than 98"
+		return
+	endIf
+endIf
+
+executeScript --isfromfile  --filename "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+
+goSub --label UpdateCounters
+
+goSub --label updateExcel
+
+if --left "${result_code}" --operator "Equal_To" --right 00 --comment "00 - Success"
+	goSub --label SendCustomerReceipt
+endIf
+endSub
+
+beginSub --name recordStats
+getTimePart --time ${totalRunTime} --type "Minutes" timing_minutes=value
+getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+getTimePart --time ${totalRunTime} --type "Seconds" timing_seconds=value
+getTimePart --time ${totalRunTime} --type "Milliseconds" timing_milliseconds=value
+setVar --name "${stats}" --value "Robot ${robotName} ran at host ${windowsHost}\r\nProcessed File: ${processFileName}\r\nTotal items processed - ${processedCount}\r\nRefunds Issued - ${refundCount}\r\nRefunds not issued - ${noRefundCount}\r\nRobot took ${timing_minutes} Minute(s) ${timing_seconds} Second(s) ${timing_milliseconds} Millisecond(s) " --comment "Create stats message"
+endSub
+
+beginSub --name ProcessRefunds
+// process the refunds stored in a spreadsheet
+logMessage --message "Excel Path - ${processFileName}" --type "Info"
+excelOpen --file "${processFileName}" --savechanges  retVal=success returnStatus=reason excelFile=value
+if --left "${retVal}" --operator "Is_True" --negate 
+	logMessage --message "Error opening Excel: ${returnStatus}" --type "Error"
+	stopExecution
+endIf
+excelGetTable --file ${excelFile} --getfirstsheet  --entiretable  --hasheaders  fileDataTable=value fileRowCount=rows
+logMessage --message "Begin processing ${fileRowCount} Rows" --type "Info" --comment "Log how many rows"
+evaluate --expression "${fileRowCount}+1" --comment "Increment by 1 takes care of header" fileRowCount=value
+for --variable ${tableIndex} --from 2 --to ${fileRowCount} --step 1
+	goSub --label refundCustomer
+next
+stopTimer --stopwatch ${stopwatch} totalRunTime=time totalHours=hours totalMinutes=minutes totalSeconds=seconds
+goSub --label recordStats --comment "Record Stats"
+goSub --label sendSuccessEmail --comment "Send success email"
+logMessage --message "${stats}" --type "Info"
+endSub
+
+beginSub --name sendSuccessEmail
+logMessage --message "Create Email Body" --type "Info"
+getTimePart --time ${totalRunTime} --type "Minutes" timing_minutes=value
+getTimePart --time ${totalRunTime} --type "Seconds" timing_seconds=value
+getTimePart --time ${totalRunTime} --type "Milliseconds" timing_milliseconds=value
+setVar --name "${emailBody}" --value "Robot finished processing\r\n${stats}\r\n\r\nPlease see attached spreadsheet for details\r\n\r\n"
+logMessage --message "${emailBody}" --type "Info"
+setVar --name "${attachments}" --value "[${processFileName}]"
+// TODO: Send Email
+endSub
+
+beginSub --name SendCustomerReceipt
+getCurrentDateAndTime --localorutc "LocalTime" --comment "Get time for each record" currentDateTime=value
+exportReport --format "Pdf" --title "Refund Receipt" --watermark "None" --createrandomfile  --asset "${asset.RefundReceipt}" --mappings "CustomerName=${customerName},InvoiceNumber=${ticket_number},Destination=${destination},Amount=${payment_value},RefundReason=${cancellationReason},CustomerAddress=${customerAddress},RefundDate=${currentDateTime}" fileLocation=filepath
+logMessage --message "Sending ${fileLocation} to ${customerEmail}" --type "Info"
+// TODO email receipt
+endSub
+
+beginSub --name UpdateCounters
+if --left "${result_code}" --operator "Equal_To" --right 00 --comment "00 - Success"
+	//updateCounter --project Refunds --counter Success --value 1
+	evaluate --expression "${refundCount} + 1" refundCount=value
+	return
+endIf
+
+evaluate --expression "${noRefundCount} + 1" noRefundCount=value
+
+if --left "${result_code}" --operator "Equal_To" --right 01 --comment "01 - invalid ticket number"
+	//updateCounter --project Refunds --counter InvalidTicket --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 02 --comment "02 - invalid payment type"
+	//updateCounter --project Refunds --counter InvalidPaymentType --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 03 --comment "03 - invalid amount"
+	//updateCounter --project Refunds --counter InvalidAmount --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 98 --comment "98 - Backend Error"
+	//updateCounter --project Refunds --counter BackendError --value 1
+elseIf --left "${result_code}" --operator "Equal_To" --right 99 --comment "99 - Bor Error"
+	//updateCounter --project Refunds --counter BotError --value 1
+endIf
+endSub
+
+beginSub --name getErrorMessage
+getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+setVar --name "${errorDescription}" --value "${errorDescription}\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${wdg:errorMessage}\r\nSubroutine: ${wdg:errorSubName}\r\nLine Number: ${wdg:lineNumber}"
+endSub
+
+beginSub --name SendErrorToAdmin
+// TODO email error to admin
+logMessage --message "Sending error message to admin: " --type "Info"
+logMessage --message "------------------------------------------------------------------------" --type "Info"
+logMessage --message "${errorDescription}" --type "Info"
+logMessage --message "------------------------------------------------------------------------" --type "Info"
+endSub
+
+beginSub --name Main_ErrorHandler
+goSub --label getErrorMessage
+goSub --label SendErrorToAdmin
+endSub
+"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.1.0
