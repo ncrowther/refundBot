@@ -11,10 +11,10 @@
 # ibmcloud app push
 
 # **** Run locally *****
-#  Window1:
+#  Window 1:
 # npm start   
 
-# Window2:
+# Window 2:
 # cd ui-react  
 # npm start
 # This will automatically start the browser with react

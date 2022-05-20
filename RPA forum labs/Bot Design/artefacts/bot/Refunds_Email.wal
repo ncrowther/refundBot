@@ -1,0 +1,20 @@
+
+	‡‚7í*mNã7Üj)@ùº›
+defVar --name emailServerConnectionInstance --type EmailConnection
+defVar --name in_vaultName --type String --parameter
+defVar --name emailUsername --type String
+defVar --name emailPassword --type SecureString
+defVar --name vaultSuccess --type Boolean
+defVar --name in_recipients --type List --innertype String --parameter
+defVar --name in_subject --type String --parameter
+defVar --name in_body --type String --parameter
+defVar --name in_attachments --type List --innertype String --parameter
+getVaultItem --name "${in_vaultName}" --system  vaultSuccess=success emailUsername=userName emailPassword=password
+logMessage --message "user - ${emailUsername}\r\nrecipients - ${in_recipients}\r\nsubject - ${in_subject}\r\nbody - ${in_body}\r\nattachments - ${in_attachments}" --type "Info"
+imapConnect --mailhost "imap.gmail.com" --mailport 993 --usessl  --UseConnectionToSend  --smtpcredentials  --smtphost "smtp.gmail.com" --smtpport 587 --smtpusername "${emailUsername}" --smtppassword "${emailPassword}" --smtpusessl  --username "${emailUsername}" --mailusername "${emailUsername}" --mailpassword "${emailPassword}" emailServerConnectionInstance=value
+emailSend --connection ${emailServerConnectionInstance} --to ${in_recipients} --from "${emailUsername}" --subject "${in_subject}" --bodytype "Text" --body "${in_body}" --attachments ${in_attachments}
+
+
+
+
+"	+?è®BO∞ BØ®}1Â*21.0.1.0

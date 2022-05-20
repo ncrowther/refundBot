@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="_2022011315333" targetNamespace="http://www.bizagi.com/definitions/_2022011315333" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <collaboration id="Id_9e4d5786-6b88-47b8-95d8-e025cf9bc746" name="Diagram 1">
+    <participant id="Id_819c5ec2-0a26-4cfc-b266-cfb8614a3c8b" name="Untitled 1" processRef="Id_6a7a2609-052e-4968-8bf9-4f512ddbd39d" />
+  </collaboration>
+  <process id="Id_6a7a2609-052e-4968-8bf9-4f512ddbd39d" name="Untitled 1">
+    <endEvent id="Id_d3f31341-6e99-496f-ad3f-96c42f60bcb1" name="End">
+      <incoming>Id_3a76677f-6f7c-4547-98d1-3c80252a3bd4</incoming>
+      <incoming>Id_2e16344e-0426-4da2-b2b1-14bbc60c13a0</incoming>
+    </endEvent>
+    <exclusiveGateway id="Id_59f9a8b4-1582-496a-a7fe-b31cb239c0e4" name="Refunded?" gatewayDirection="Diverging">
+      <incoming>Id_f70d5f64-e2be-4b18-a2a6-872f4ee623be</incoming>
+      <outgoing>Id_82ef02e4-60be-4d34-8b8a-02fdc0a2b60a</outgoing>
+      <outgoing>Id_3a76677f-6f7c-4547-98d1-3c80252a3bd4</outgoing>
+    </exclusiveGateway>
+    <sendTask id="Id_6e5002c2-8781-482f-9dd8-7aeb7d110e8c" name="Send Receipt">
+      <incoming>Id_82ef02e4-60be-4d34-8b8a-02fdc0a2b60a</incoming>
+      <outgoing>Id_2e16344e-0426-4da2-b2b1-14bbc60c13a0</outgoing>
+    </sendTask>
+    <sequenceFlow id="Id_68461437-3126-4278-a804-343fd98bf1f3" name="" sourceRef="Id_d9831288-382e-4449-befa-3dd7c3eda62a" targetRef="Id_2fe37223-13e3-4e77-acce-0a25e63390f8" />
+    <sequenceFlow id="Id_e6cc7ac7-7802-4f97-9bd4-484d616a0104" name="" sourceRef="Id_2fe37223-13e3-4e77-acce-0a25e63390f8" targetRef="Id_9d8bce18-1bc5-4284-bd44-098192bbacba" />
+    <sequenceFlow id="Id_00ac0f25-711d-4c18-9e28-1dfe0b1d6bd3" name="" sourceRef="Id_9d8bce18-1bc5-4284-bd44-098192bbacba" targetRef="Id_fbc0db1b-3ccb-449f-8a04-3ce76166180f" />
+    <sequenceFlow id="Id_82ef02e4-60be-4d34-8b8a-02fdc0a2b60a" name="" sourceRef="Id_59f9a8b4-1582-496a-a7fe-b31cb239c0e4" targetRef="Id_6e5002c2-8781-482f-9dd8-7aeb7d110e8c" />
+    <sequenceFlow id="Id_f70d5f64-e2be-4b18-a2a6-872f4ee623be" name="" sourceRef="Id_fbc0db1b-3ccb-449f-8a04-3ce76166180f" targetRef="Id_59f9a8b4-1582-496a-a7fe-b31cb239c0e4" />
+    <sequenceFlow id="Id_3a76677f-6f7c-4547-98d1-3c80252a3bd4" name="" sourceRef="Id_59f9a8b4-1582-496a-a7fe-b31cb239c0e4" targetRef="Id_d3f31341-6e99-496f-ad3f-96c42f60bcb1" />
+    <sequenceFlow id="Id_2e16344e-0426-4da2-b2b1-14bbc60c13a0" name="" sourceRef="Id_6e5002c2-8781-482f-9dd8-7aeb7d110e8c" targetRef="Id_d3f31341-6e99-496f-ad3f-96c42f60bcb1" />
+    <startEvent id="Id_d9831288-382e-4449-befa-3dd7c3eda62a" name="Start">
+      <outgoing>Id_68461437-3126-4278-a804-343fd98bf1f3</outgoing>
+    </startEvent>
+    <task id="Id_2fe37223-13e3-4e77-acce-0a25e63390f8" name="Process Refunds from Excel">
+      <incoming>Id_68461437-3126-4278-a804-343fd98bf1f3</incoming>
+      <outgoing>Id_e6cc7ac7-7802-4f97-9bd4-484d616a0104</outgoing>
+    </task>
+    <task id="Id_fbc0db1b-3ccb-449f-8a04-3ce76166180f" name="Update Status in Excel">
+      <incoming>Id_00ac0f25-711d-4c18-9e28-1dfe0b1d6bd3</incoming>
+      <outgoing>Id_f70d5f64-e2be-4b18-a2a6-872f4ee623be</outgoing>
+    </task>
+    <task id="Id_9d8bce18-1bc5-4284-bd44-098192bbacba" name="Refund Customer ">
+      <incoming>Id_e6cc7ac7-7802-4f97-9bd4-484d616a0104</incoming>
+      <outgoing>Id_00ac0f25-711d-4c18-9e28-1dfe0b1d6bd3</outgoing>
+    </task>
+  </process>
+  <BPMNDiagram id="Diagram_dac45b17-e4bd-41d9-af0a-f71c7e3095e0" xmlns="http://www.omg.org/spec/BPMN/20100524/DI">
+    <BPMNPlane id="DiagramElement_bd7e69c9-5c14-4007-ac4f-490aa76d3e7f" bpmnElement="Id_9e4d5786-6b88-47b8-95d8-e025cf9bc746">
+      <BPMNShape id="DiagramElement_3725b0bd-d1a4-4e92-b2d6-6e637497b0d1" bpmnElement="Id_819c5ec2-0a26-4cfc-b266-cfb8614a3c8b">
+        <Bounds x="12" y="12" width="1040" height="344" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_556b4f75-eec8-44b3-b16c-bf1bd5db892f" bpmnElement="Id_d9831288-382e-4449-befa-3dd7c3eda62a">
+        <Bounds x="50" y="250" width="64" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_b434110c-2260-4415-8a18-5a95d002fb8e" bpmnElement="Id_2fe37223-13e3-4e77-acce-0a25e63390f8">
+        <Bounds x="150" y="250" width="100" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_a3c336d2-074b-4648-9dd0-d3f6b297e51b" bpmnElement="Id_fbc0db1b-3ccb-449f-8a04-3ce76166180f">
+        <Bounds x="536" y="250" width="100" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_3ec006c3-c4c8-4d3e-818a-b3deac15f308" bpmnElement="Id_9d8bce18-1bc5-4284-bd44-098192bbacba">
+        <Bounds x="306" y="250" width="150" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_efc4c2ea-f722-4b33-ad4e-43c662c9b5dc" bpmnElement="Id_6e5002c2-8781-482f-9dd8-7aeb7d110e8c">
+        <Bounds x="850" y="400" width="100" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_9bf1ade4-4e43-4dc8-b9bb-ea989799234f" bpmnElement="Id_59f9a8b4-1582-496a-a7fe-b31cb239c0e4">
+        <Bounds x="700" y="250" width="100" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNShape id="DiagramElement_b112e5f9-8b86-4d7c-916a-6887a86925a4" bpmnElement="Id_d3f31341-6e99-496f-ad3f-96c42f60bcb1">
+        <Bounds x="950" y="250" width="64" height="64" xmlns="http://www.omg.org/spec/DD/20100524/DC" />
+      </BPMNShape>
+      <BPMNEdge id="DiagramElement_b4a3ab44-aec8-4356-b700-a34577ba4fc9" bpmnElement="Id_68461437-3126-4278-a804-343fd98bf1f3">
+        <waypoint x="232" y="264" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="138" y="350" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_5f8855f5-f75a-4705-9948-aa1b054532fa" bpmnElement="Id_e6cc7ac7-7802-4f97-9bd4-484d616a0104">
+        <waypoint x="177" y="382" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="400" y="282" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_390144e9-91a0-42b5-aeb5-830e88365657" bpmnElement="Id_00ac0f25-711d-4c18-9e28-1dfe0b1d6bd3">
+        <waypoint x="477" y="282" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="550" y="282" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_f4fa4fe0-521c-4157-a795-ae7e9c0bb567" bpmnElement="Id_82ef02e4-60be-4d34-8b8a-02fdc0a2b60a">
+        <waypoint x="732" y="314" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="650" y="482" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_740e446b-3d4d-4d8c-9317-f9777b592fa4" bpmnElement="Id_f70d5f64-e2be-4b18-a2a6-872f4ee623be">
+        <waypoint x="477" y="582" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="500" y="432" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_21ebd343-a459-4c93-be17-e25d19eb9fb9" bpmnElement="Id_3a76677f-6f7c-4547-98d1-3c80252a3bd4">
+        <waypoint x="532" y="400" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="700" y="282" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+      <BPMNEdge id="DiagramElement_e402ad9b-cc11-4b9c-b3a0-5786806c8820" bpmnElement="Id_2e16344e-0426-4da2-b2b1-14bbc60c13a0">
+        <waypoint x="877" y="432" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+        <waypoint x="982" y="314" xmlns="http://www.omg.org/spec/DD/20100524/DI" />
+      </BPMNEdge>
+    </BPMNPlane>
+  </BPMNDiagram>
+</definitions>
