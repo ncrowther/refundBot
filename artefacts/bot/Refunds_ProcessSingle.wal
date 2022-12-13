@@ -1,5 +1,5 @@
 
-	w{BaF†Êç2¸ÑcÁ,// Description
+	w{BaF†Êç2¸ÑcÇ,// Description
 //	Access the Travel Refund website.  Enter a single refund and return the result.
 // 
 // Input Variables
@@ -130,6 +130,7 @@ beginSub --name setTicketNumber
 	goSub --label waitWebClickId
 	webSet --value "${in_param_ticket}" --selector "Id" --id "${controlId}" --simulatehuman
 endSub
+
 beginSub --name setPaymentType
 	setVar --name "${controlId}" --value paymentType
 	goSub --label waitWebClickId
@@ -140,13 +141,15 @@ beginSub --name setRefundAmount
 	goSub --label waitWebClickId
 	webSet --value "${in_param_repaymentAmt}" --selector "Id" --id "${controlId}" --simulatehuman
 endSub
+
 beginSub --name setRefundReason
 	setVar --name "${controlId}" --value reason
 	goSub --label waitWebClickId
 	webSet --value "${in_param_refundReason}" --selector "Id" --id "${controlId}" --simulatehuman
 endSub
+
 beginSub --name clickRefundButton
 	setVar --name "${controlId}" --value submit
 	goSub --label waitWebClickId
 	delay --timeout "00:00:01"
-endSub"	#w3V«jH•TbóJüåe*21.0.1.0
+endSub"	#w3V«jH•TbóJüåe*21.0.6.0
