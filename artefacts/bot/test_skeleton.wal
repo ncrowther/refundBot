@@ -1,0 +1,44 @@
+§
+// Description
+//	Test case skeleton  
+//
+defVar --name failureCount --type Numeric
+defVar --name testCaseName --type String
+defVar --name expectedValue --type Numeric
+defVar --name actualValue --type Numeric
+
+onError --label evaluateException
+
+testCase --id 1 --title "Test Case Skeleton" --description Skeleton --category SKELETON --result Success
+
+logMessage --message "Starting Unit tests" --type "Info"
+
+goSub --label testCaseSuccess
+goSub --label testCaseFail
+
+logMessage --message "Unit tests completed with ${failureCount} failures" --type "Info"
+
+beginSub --name testCaseSuccess
+
+evaluate --expression "1 + 1" actualValue=value
+
+setVar --name "${expectedValue}" --value 2
+assert --message "${rpa:subName}" --left "${actualValue}" --operator "Equal_To" --right "${expectedValue}"
+
+endSub
+
+beginSub --name testCaseFail
+
+evaluate --expression "1 + 3" actualValue=value
+
+setVar --name "${expectedValue}" --value 3
+assert --message "${rpa:subName}" --left "${actualValue}" --operator "Equal_To" --right "${expectedValue}"
+
+endSub
+
+beginSub --name evaluateException
+logMessage --message "Failed ${rpa:errorSubName},  Expected value: ${expectedValue}, actual value: ${actualValue}. \r\n${rpa:errorMessage} " --type "Info"
+incrementVar --number ${failureCount}
+recover
+endSub
+*21.0.6.0

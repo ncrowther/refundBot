@@ -1,5 +1,5 @@
 
-	’W”y›³B’)…"¶%^¨À—// Description
+	’W”y›³B’)…"¶%^¨®—// Description
 //    Reads an excel file containing customers to be refunded.  For each customer it enters their details in the Travel Refund website.
 //    If the website fails the error is retried.  Results are written back to the same excel file
 // 
@@ -133,7 +133,7 @@ if --left "${rpaStatusCode}" --operator "Is_Null_Or_Empty" --negate  --comment "
 endIf
 
 //executeScript --isfromfile  --filename "C:\\Users\\Administrator\\Desktop\\IBM RPA Lab Resources\\Lab resources for Bot Design and Reporting\\Artefacts\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
-executeScript --isfromfile  --filename "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+executeScript --name "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
 
 goSub --label UpdateCounters
 
@@ -215,7 +215,7 @@ endSub
 
 beginSub --name getErrorMessage
 getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
-setVar --name "${errorDescription}" --value "${errorDescription}\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${wdg:errorMessage}\r\nSubroutine: ${wdg:errorSubName}\r\nLine Number: ${wdg:lineNumber}"
+setVar --name "${errorDescription}" --value "${errorDescription}\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${rpa:errorMessage}\r\nSubroutine: ${rpa:errorSubName}\r\nLine Number: ${rpa:lineNumber}"
 endSub
 
 beginSub --name SendErrorToAdmin
@@ -230,4 +230,4 @@ beginSub --name Main_ErrorHandler
 goSub --label getErrorMessage
 goSub --label SendErrorToAdmin
 endSub
-"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.1.0
+"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.6.0
