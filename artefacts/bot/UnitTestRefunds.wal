@@ -1,0 +1,165 @@
+‘G// Description
+//    Reads an excel file containing refund test cases.  For each test case it enters their details in the Travel Refund website.
+//    Results are written back to the same excel file
+// 
+// Input
+// Customer Excel file
+//
+// Output
+// Customer Excel file
+//
+defVar --name robotName --type String --value "Refunds Unit Tests"
+//defVar --name projectPath --type String --value "C:\\Users\\Administrator\\Desktop\\IBM RPA Lab Resources\\Lab resources for Bot Design and Reporting\\Artefacts"
+defVar --name projectPath --type String --value "D:\\RPA\\github\\refundBot\\artefacts"
+defVar --name processFileName --type String
+defVar --name fileDataTable --type DataTable
+defVar --name fileRowCount --type Numeric
+defVar --name ticket_number --type String
+defVar --name excelFile --type Excel
+defVar --name rpa_status --type String
+defVar --name payment_type --type String
+defVar --name payment_value --type String
+defVar --name success --type Boolean
+defVar --name retVal --type Boolean
+defVar --name stopwatch --type Stopwatch
+defVar --name totalHours --type Numeric
+defVar --name totalMinutes --type Numeric
+defVar --name totalSeconds --type Numeric
+defVar --name result_code --type String
+defVar --name result_desc --type String
+defVar --name totalRunTime --type TimeSpan
+defVar --name timing_minutes --type Numeric
+defVar --name timing_seconds --type Numeric
+defVar --name timing_milliseconds --type Numeric
+defVar --name tableIndex --type Numeric --value 1
+defVar --name refundCount --type Numeric --value 0
+defVar --name noRefundCount --type Numeric --value 0
+defVar --name processedCount --type Numeric --value 0
+defVar --name currentDateTime --type DateTime
+defVar --name colIdxTestNumber --type Numeric --value 1
+defVar --name colIdxTestScenario --type Numeric --value 2
+defVar --name colIdxTicketNo --type Numeric --value 3
+defVar --name colIdxCustomerName --type Numeric --value 4
+defVar --name colIdxPaymentType --type Numeric --value 5
+defVar --name colIdxPaymentValue --type Numeric --value 6
+defVar --name colIdxPaymentDate --type Numeric --value 7
+defVar --name colIdxDestination --type Numeric --value 8
+defVar --name colIdxReason --type Numeric --value 9
+defVar --name colIdxCode --type Numeric --value 10
+defVar --name colIdxDesc --type Numeric --value 11
+defVar --name colIdxTimestamp --type Numeric --value 12
+defVar --name colIdxPass --type Numeric --value 13
+defVar --name rpaStatusCode --type String
+defVar --name rpaStatusDesc --type String
+defVar --name errorDescription --type String
+defVar --name windowsHost --type String
+defVar --name stats --type String
+defVar --name returnStatus --type String
+defVar --name customerName --type String
+defVar --name paymentDate --type String
+defVar --name destination --type String
+defVar --name cancellationReason --type String
+defVar --name expectedResult --type String
+defVar --name testResult --type String --value PASS
+defVar --name actualResult --type String
+
+onError --label Main_ErrorHandler
+
+logMessage --message "${robotName} Started" --type "Info"
+startTimer stopwatch=value
+
+goSub --label TestRefunds
+
+beginSub --name TestRefunds
+// Test cases stored in the spreadsheet
+	setVar --name "${processFileName}" --value "${projectPath}\\data\\testrefunds.xlsx"
+	logMessage --message "Excel Path - ${processFileName}" --type "Info"
+	excelOpen --file "${processFileName}" --savechanges  retVal=success returnStatus=reason excelFile=value
+	if --left "${retVal}" --operator "Is_True" --negate
+		logMessage --message "Error opening Excel: ${returnStatus}" --type "Error"
+		stopExecution
+	endIf
+	excelGetTable --file ${excelFile} --getfirstsheet  --entiretable  --hasheaders  fileDataTable=value fileRowCount=rows
+	logMessage --message "Begin tests" --type "Info"
+	evaluate --expression "${fileRowCount}+1" --comment "Increment by 1 to read last row" fileRowCount=value
+	for --variable ${tableIndex} --from 3 --to ${fileRowCount} --step 1
+		goSub --label refundCustomer
+	next
+	stopTimer --stopwatch ${stopwatch} totalRunTime=time totalHours=hours totalMinutes=minutes totalSeconds=seconds
+	goSub --label recordStats --comment "Record Stats"
+	logMessage --message "${stats}" --type "Info"
+endSub
+
+
+beginSub --name getExcelValues
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxTicketNo} --comment "Get Ticket Number" ticket_number=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxCustomerName} --comment "Get Customer Name" customerName=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentType} --comment "Get Payment Type" payment_type=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentValue} --comment "Get Payment Value" payment_value=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPaymentDate} --comment "Get Payment Date" paymentDate=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxDestination} --comment "Get Destination" destination=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxReason} --comment "Get Cancellation Reason" cancellationReason=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxCode} --comment "Get RPA Status Code" rpaStatusCode=value
+	excelGet --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxDesc} --comment "Get RPA Status Description" rpaStatusDesc=value
+	
+	trimString --text "${ticket_number}" --trimoption "TrimStartAndEnd" ticket_number=value
+	trimString --text "${payment_type}" --trimoption "TrimStartAndEnd" payment_type=value
+	trimString --text "${payment_value}" --trimoption "TrimStartAndEnd" payment_value=value
+	
+	logMessage --message "\r\nTicket Number - ${ticket_number}\r\nStatus - ${rpa_status}\r\nStatus Code - ${rpaStatusCode}\r\nPayment Type - ${payment_type}\r\nPayment Value - ${payment_value}\r\n" --type "Info"
+endSub
+
+beginSub --name refundCustomer
+	evaluate --expression "${processedCount} + 1" --comment "Row Count for Report" processedCount=value
+	goSub --label getExcelValues --comment "Get excel values"
+	
+	executeScript --name "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+	
+	goSub --label updateExcel
+	
+endSub
+
+beginSub --name updateExcel
+	
+	getCurrentDateAndTime --localorutc "LocalTime" --comment "Get timestamp" currentDateTime=value
+	excelSet --value "${currentDateTime}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxTimestamp} --comment "Timestamp of test"
+	
+// Test status code
+	setVar --name "${expectedResult}" --value "${rpaStatusCode}"
+	setVar --name "${actualResult}" --value "${result_code}"
+	if --left "${expectedResult}" --operator "Equal_To" --right "${actualResult}"
+		setVar --name "${testResult}" --value PASS
+	else
+		setVar --name "${testResult}" --value "FAIL.  Expected ${expectedResult}.  Actual: ${actualResult}"
+	endIf
+	
+// Test status description
+	setVar --name "${expectedResult}" --value "${rpaStatusDesc}"
+	setVar --name "${actualResult}" --value "${result_desc}"
+	if --left "${expectedResult}" --operator "Equal_To" --right "${actualResult}"
+		setVar --name "${testResult}" --value PASS
+	else
+		setVar --name "${testResult}" --value "FAIL.  Expected ${expectedResult}.  Actual: ${actualResult}"
+	endIf
+	
+// Set the test result back into the spreadsheet
+	excelSet --value "${testResult}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxPass} --comment "Set test result"
+endSub
+
+beginSub --name recordStats
+	getTimePart --time ${totalRunTime} --type "Minutes" timing_minutes=value
+	getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+	getTimePart --time ${totalRunTime} --type "Seconds" timing_seconds=value
+	getTimePart --time ${totalRunTime} --type "Milliseconds" timing_milliseconds=value
+	setVar --name "${stats}" --value "Robot ${robotName} ran at host ${windowsHost}\r\nProcessed File: ${processFileName}\r\nTotal items processed - ${processedCount}\r\nRefunds Issued - ${refundCount}\r\nRefunds not issued - ${noRefundCount}\r\nRobot took ${timing_minutes} Minute(s) ${timing_seconds} Second(s) ${timing_milliseconds} Millisecond(s) " --comment "Create stats message"
+endSub
+
+beginSub --name getErrorMessage
+	getEnvVar --name COMPUTERNAME --target "Process" windowsHost=value
+	setVar --name "${errorDescription}" --value "${errorDescription}\r\nRobot Name: ${robotName}\r\nWindows Host: ${windowsHost}\r\nError Message: ${rpa:errorMessage}\r\nSubroutine: ${rpa:errorSubName}\r\nLine Number: ${rpa:lineNumber}"
+endSub
+
+beginSub --name Main_ErrorHandler
+	goSub --label getErrorMessage
+endSub
+*21.0.6.0

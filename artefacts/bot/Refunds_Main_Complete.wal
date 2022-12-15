@@ -1,5 +1,4 @@
-
-	’W”y›³B’)…"¶%^¨®—// Description
+¬—// Description
 //    Reads an excel file containing customers to be refunded.  For each customer it enters their details in the Travel Refund website.
 //    If the website fails the error is retried.  Results are written back to the same excel file
 // 
@@ -229,5 +228,4 @@ endSub
 beginSub --name Main_ErrorHandler
 goSub --label getErrorMessage
 goSub --label SendErrorToAdmin
-endSub
-"	ÆÍðØÖ™@¸ýZ@÷ÓP*21.0.6.0
+endSub*21.0.6.0
