@@ -1,4 +1,4 @@
-‘G// Description
+€H// Description
 //    Reads an excel file containing refund test cases.  For each test case it enters their details in the Travel Refund website.
 //    Results are written back to the same excel file
 // 
@@ -10,7 +10,7 @@
 //
 defVar --name robotName --type String --value "Refunds Unit Tests"
 //defVar --name projectPath --type String --value "C:\\Users\\Administrator\\Desktop\\IBM RPA Lab Resources\\Lab resources for Bot Design and Reporting\\Artefacts"
-defVar --name projectPath --type String --value "D:\\RPA\\github\\refundBot\\artefacts"
+defVar --name projectPath --type String 
 defVar --name processFileName --type String
 defVar --name fileDataTable --type DataTable
 defVar --name fileRowCount --type Numeric
@@ -65,12 +65,14 @@ defVar --name actualResult --type String
 
 onError --label Main_ErrorHandler
 
+getSpecialFolder --folder "MyDocuments" projectPath=value
+
 logMessage --message "${robotName} Started" --type "Info"
 startTimer stopwatch=value
 
-goSub --label TestRefunds
+goSub --label ReadExcelTestScenarios
 
-beginSub --name TestRefunds
+beginSub --name ReadExcelTestScenarios
 // Test cases stored in the spreadsheet
 	setVar --name "${processFileName}" --value "${projectPath}\\data\\testrefunds.xlsx"
 	logMessage --message "Excel Path - ${processFileName}" --type "Info"
@@ -83,7 +85,7 @@ beginSub --name TestRefunds
 	logMessage --message "Begin tests" --type "Info"
 	evaluate --expression "${fileRowCount}+1" --comment "Increment by 1 to read last row" fileRowCount=value
 	for --variable ${tableIndex} --from 3 --to ${fileRowCount} --step 1
-		goSub --label refundCustomer
+		goSub --label executeScenario
 	next
 	stopTimer --stopwatch ${stopwatch} totalRunTime=time totalHours=hours totalMinutes=minutes totalSeconds=seconds
 	goSub --label recordStats --comment "Record Stats"
@@ -109,17 +111,17 @@ beginSub --name getExcelValues
 	logMessage --message "\r\nTicket Number - ${ticket_number}\r\nStatus - ${rpa_status}\r\nStatus Code - ${rpaStatusCode}\r\nPayment Type - ${payment_type}\r\nPayment Value - ${payment_value}\r\n" --type "Info"
 endSub
 
-beginSub --name refundCustomer
+beginSub --name executeScenario
 	evaluate --expression "${processedCount} + 1" --comment "Row Count for Report" processedCount=value
 	goSub --label getExcelValues --comment "Get excel values"
 	
-	executeScript --name "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+	goSub --label Refund
 	
-	goSub --label updateExcel
+	goSub --label updateScenarioResult
 	
 endSub
 
-beginSub --name updateExcel
+beginSub --name updateScenarioResult
 	
 	getCurrentDateAndTime --localorutc "LocalTime" --comment "Get timestamp" currentDateTime=value
 	excelSet --value "${currentDateTime}" --file ${excelFile} --getfirstsheet  --row ${tableIndex} --column ${colIdxTimestamp} --comment "Timestamp of test"
@@ -162,4 +164,7 @@ endSub
 beginSub --name Main_ErrorHandler
 	goSub --label getErrorMessage
 endSub
-*21.0.6.0
+
+beginSub --name Refund
+	executeScript --name "${projectPath}\\bot\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value},in_param_refundReason=${cancellationReason}" --output "out_success=${success},out_code=${result_code},out_desc=${result_desc}"
+endSub*21.0.6.0
