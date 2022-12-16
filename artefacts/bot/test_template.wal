@@ -29,7 +29,7 @@ endSub
 
 beginSub --name testCaseFail
 
-evaluate --expression "1 + 3" actualValue=value
+evaluate --expression "1 + 2" actualValue=value
 
 setVar --name "${expectedValue}" --value 3
 assert --message "${rpa:subName}" --left "${actualValue}" --operator "Equal_To" --right "${expectedValue}"

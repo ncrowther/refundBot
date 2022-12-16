@@ -1,5 +1,5 @@
-þ// Description
-//	Test cases for the Travel Refund website.  
+ß// Description
+//    Test cases for the Travel Refund website.  
 //
 defVar --name ticket_number --type String
 defVar --name payment_type --type String
@@ -11,9 +11,12 @@ defVar --name failureCount --type Numeric
 defVar --name testCaseName --type String
 defVar --name expectedValue --type String
 defVar --name actualValue --type String
+defVar --name projectPath --type String
 defVar --name botScriptPath --type String --value "D:\\RPA\\github\\refundBot\\artefacts\\bot"
 
 onError --label evaluateException
+getSpecialFolder --folder "MyDocuments" projectPath=value
+setVar --name "${botScriptPath}" --value "${projectPath}\\Artefacts\\bot"
 
 testCase --id 1 --title "Test refunds" --description Refunds --category REFUNDS --result "Successful refunds"
 
@@ -24,51 +27,55 @@ goSub --label invalidRefundAmount
 logMessage --message "Unit tests completed with ${failureCount} failures" --type "Info"
 
 beginSub --name successfulCardRefund
-
-setVar --name "${ticket_number}" --value 567567
-setVar --name "${payment_type}" --value Card
-setVar --name "${payment_value}" --value 87
-
-executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
-
-setVar --name "${expectedValue}" --value 00
-setVar --name "${actualValue}" --value "${out_code}"
-
-assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
-
+	
+	setVar --name "${ticket_number}" --value 567567
+	setVar --name "${payment_type}" --value Card
+	setVar --name "${payment_value}" --value 87
+	setVar --name "${expectedValue}" --value 00
+	
+	executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
 endSub
 
+
 beginSub --name cashRefundNotAccepted
-
-setVar --name "${ticket_number}" --value 453445
-setVar --name "${payment_type}" --value Cash
-setVar --name "${payment_value}" --value 8
-
-executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
-
-setVar --name "${expectedValue}" --value 02
-setVar --name "${actualValue}" --value "${out_code}"
-assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
-
+	
+	setVar --name "${ticket_number}" --value 453445
+	setVar --name "${payment_type}" --value Cash
+	setVar --name "${payment_value}" --value 8
+	setVar --name "${expectedValue}" --value 02
+	
+	executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
 endSub
 
 beginSub --name invalidRefundAmount
-
-setVar --name "${ticket_number}" --value 087877
-setVar --name "${payment_type}" --value Card
-setVar --name "${payment_value}" --value 870000
-
-executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
-
-setVar --name "${expectedValue}" --value 03
-setVar --name "${actualValue}" --value "${out_code}"
-assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
-
+	
+	setVar --name "${ticket_number}" --value 087877
+	setVar --name "${payment_type}" --value Card
+	setVar --name "${payment_value}" --value 870000
+	setVar --name "${expectedValue}" --value 03
+	
+	executeScript --name "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
 endSub
 
 beginSub --name evaluateException
-logMessage --message "Failed ${rpa:errorSubName},  Expected value: ${expectedValue}, actual value: ${actualValue}. \r\n${rpa:errorMessage}" --type "Info"
-incrementVar --number ${failureCount}
-recover
+	logMessage --message "Failed ${rpa:errorSubName},  Expected value: ${expectedValue}, actual value: ${actualValue}. \r\n${rpa:errorMessage}" --type "Info"
+	incrementVar --number ${failureCount}
+	recover
 endSub
+
 *21.0.6.0

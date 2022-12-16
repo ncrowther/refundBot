@@ -1,0 +1,72 @@
+ñ// Description
+//    Test cases for the Travel Refund website.  
+//
+defVar --name ticket_number --type String
+defVar --name payment_type --type String
+defVar --name payment_value --type String
+defVar --name out_success --type String
+defVar --name out_code --type String
+defVar --name out_desc --type String
+defVar --name failureCount --type Numeric
+defVar --name testCaseName --type String
+defVar --name expectedValue --type String
+defVar --name actualValue --type String
+defVar --name projectPath --type String
+defVar --name botScriptPath --type String
+
+onError --label evaluateException
+getSpecialFolder --folder "MyDocuments" projectPath=value
+setVar --name "${botScriptPath}" --value "${projectPath}\\Artefacts\\bot"
+
+testCase --id 1 --title "Test refunds" --description Refunds --category REFUNDS --result "Successful refunds"
+
+goSub --label successfulCardRefund
+goSub --label cashRefundNotAccepted
+goSub --label invalidRefundAmount
+
+logMessage --message "Unit tests completed with ${failureCount} failures" --type "Info"
+
+beginSub --name successfulCardRefund
+	
+// Enter test data here
+	
+	executeScript --isfromfile  --filename "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
+endSub
+
+
+beginSub --name cashRefundNotAccepted
+	
+// Enter test data here
+	
+	executeScript --isfromfile  --filename "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
+endSub
+
+beginSub --name invalidRefundAmount
+	
+// Enter test data here
+	
+	executeScript --isfromfile  --filename "${botScriptPath}\\Refunds_ProcessSingle.wal" --parameters "in_param_ticket=${ticket_number},in_param_paymentType=${payment_type},in_param_repaymentAmt=${payment_value}" --output "out_success=${out_success},out_code=${out_code},out_desc=${out_desc}"
+	
+	setVar --name "${actualValue}" --value "${out_code}"
+	
+	assert --message "${rpa:subName}" --left "${out_code}" --operator "Equal_To" --right "${expectedValue}"
+	
+endSub
+
+beginSub --name evaluateException
+	logMessage --message "Failed ${rpa:errorSubName},  Expected value: ${expectedValue}, actual value: ${actualValue}. \r\n${rpa:errorMessage}" --type "Info"
+	incrementVar --number ${failureCount}
+	recover
+endSub
+
+*21.0.2.5
